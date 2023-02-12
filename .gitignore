@@ -1,3 +1,5 @@
 src/.vs/
-src/FlexGrid/Build/
-src/FlexGrid/obj/
+src/KevinComponent/Build/
+src/KevinComponent/bin/
+src/KevinComponent/obj/
+*.csproj.user

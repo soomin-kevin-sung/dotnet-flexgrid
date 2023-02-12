@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <BaseOutputPath>Build</BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="Themes\Theme.Colors">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Themes\Theme.FlexGrid">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+</Project>
