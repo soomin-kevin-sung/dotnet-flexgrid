@@ -105,7 +105,7 @@ namespace KevinComponent
 			// Remove Columns Not Needed.
 			foreach (var column in Columns.ToArray())
 			{
-				if (!(column is FlexGridColumn fgc) || !totalBottomBandsHash.Contains(fgc.OwnerBand))
+				if (column is not FlexGridColumn fgc || !totalBottomBandsHash.Contains(fgc.OwnerBand))
 					Columns.Remove(column);
 			}
 			
@@ -179,8 +179,8 @@ namespace KevinComponent
 
 		private void OnBandsCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
 		{
-			var bands = sender as BandCollection;
-			AttachEventHandlers(bands);
+			if (sender is BandCollection bands)
+				AttachEventHandlers(bands);
 
 			SyncColumnsWithBands();
 		}
@@ -210,7 +210,8 @@ namespace KevinComponent
 			if (CommitEdit())
 			{
 				PrepareForSort(sortColumn);
-				DataGridSortingEventArgs args = new DataGridSortingEventArgs(sortColumn);
+
+				var args = new DataGridSortingEventArgs(sortColumn);
 				OnSorting(args);
 
 				if (Items.NeedsRefresh)

@@ -30,8 +30,8 @@ namespace KevinComponent
 
 		#region Public Events
 
-		public event DependencyPropertyChangedEventHandler VirtualBandItemsSourceChanged;
-		public event NotifyCollectionChangedEventHandler VirtualBandItemsSourceCollectionChanged;
+		public event DependencyPropertyChangedEventHandler? VirtualBandItemsSourceChanged;
+		public event NotifyCollectionChangedEventHandler? VirtualBandItemsSourceCollectionChanged;
 
 		#endregion
 
@@ -56,7 +56,7 @@ namespace KevinComponent
 
 		#region Public Properties
 
-		public Band ParentBand { get; }
+		public Band? ParentBand { get; }
 
 		public int MaxDepth
 		{

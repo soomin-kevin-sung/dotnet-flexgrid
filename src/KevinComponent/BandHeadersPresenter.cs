@@ -61,7 +61,7 @@ namespace KevinComponent
 
 		#region Public Properties
 
-		public FlexGrid OwnerFlexGrid
+		public FlexGrid? OwnerFlexGrid
 		{
 			get
 			{

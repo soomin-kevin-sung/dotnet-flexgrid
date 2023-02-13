@@ -28,6 +28,8 @@ namespace KevinComponent
 
 		protected Band()
 		{
+			SyncDataGridColumn = new FlexGridColumn(this);
+
 			Bands = new BandCollection(this);
 			Bands.CollectionChanged += OnBandsCollectionChanged;
 			Bands.VirtualBandItemsSourceChanged += OnVirtualBandItemsSourceChanged;
@@ -165,7 +167,6 @@ namespace KevinComponent
 		BandHeader? _bandHeader;
 		bool _useHeaderTemplate;
 		FlexGrid? _ownerFlexGrid;
-		FlexGridColumn? _syncDataGridColumn;
 		bool _settingWithoutParentBand;
 		bool _settingWithoutSubBands;
 		Band? _parentBand;
@@ -218,21 +219,7 @@ namespace KevinComponent
 			}
 		}
 
-		internal FlexGridColumn? SyncDataGridColumn
-		{
-			get
-			{
-				if (!HasChildBands
-					&& _syncDataGridColumn == null
-					&& !(this is VirtualBand))
-				{
-					// For If Default Not Loaded.
-					_syncDataGridColumn = new FlexGridColumn(this);
-				}
-
-				return _syncDataGridColumn;
-			}
-		}
+		internal FlexGridColumn SyncDataGridColumn { get; }
 
 		#endregion
 
