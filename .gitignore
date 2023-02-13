@@ -2,4 +2,7 @@ src/.vs/
 src/KevinComponent/Build/
 src/KevinComponent/bin/
 src/KevinComponent/obj/
+src/KevinComponent.Demo.App/Build/
+src/KevinComponent.Demo.App/bin/
+src/KevinComponent.Demo.App/obj/
 *.csproj.user
