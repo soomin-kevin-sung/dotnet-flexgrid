@@ -7,18 +7,4 @@
     <BaseOutputPath>Build</BaseOutputPath>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Page Remove="Themes\Theme.Colors.xaml" />
-    <Page Remove="Themes\Theme.FlexGrid.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Themes\Theme.Colors.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Themes\Theme.FlexGrid.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-  </ItemGroup>
-
 </Project>

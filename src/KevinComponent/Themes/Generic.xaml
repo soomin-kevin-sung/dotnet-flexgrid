@@ -3,6 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:local="clr-namespace:KevinComponent">
 	<ResourceDictionary.MergedDictionaries>
-		<ResourceDictionary Source="Theme.FlexGrid" />
+		<ResourceDictionary Source="/KevinComponent;component/Themes/Theme.Colors.xaml" />
+		<ResourceDictionary Source="/KevinComponent;component/Themes/Theme.FlexGrid.xaml" />
 	</ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
