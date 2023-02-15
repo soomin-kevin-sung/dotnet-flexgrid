@@ -32,21 +32,11 @@ namespace KevinComponent
 
 		#region Depndency Properties
 
-		public static readonly DependencyProperty ShowRowHeaderHighlightProperty =
-			DependencyProperty.Register(
-				"ShowRowHeaderHighlight",
-				typeof(bool),
-				typeof(FlexGrid));
-		public static readonly DependencyProperty ShowColumnHeaderHighlightProperty =
-			DependencyProperty.Register(
-				"ShowColumnHeaderHighlight",
-				typeof(bool),
-				typeof(FlexGrid));
 		public static readonly DependencyProperty UnSelectAllByEscapeKeyProperty =
 			DependencyProperty.Register(
 				"UnSelectAllByEscapeKey",
 				typeof(bool),
-				typeof(FlexGrid));
+				typeof(FlexGrid), new FrameworkPropertyMetadata(false));
 
 		#endregion
 
@@ -55,18 +45,6 @@ namespace KevinComponent
 		public BandCollection FrozenBands { get; }
 
 		public BandCollection Bands { get; }
-
-		public bool ShowRowHeaderHighlight
-		{
-			get => (bool)GetValue(ShowRowHeaderHighlightProperty);
-			set => SetValue(ShowRowHeaderHighlightProperty, value);
-		}
-
-		public bool ShowColumnHeaderHighlight
-		{
-			get => (bool)GetValue(ShowColumnHeaderHighlightProperty);
-			set => SetValue(ShowColumnHeaderHighlightProperty, value);
-		}
 
 		public bool UnSelectAllByEscapeKey
 		{
