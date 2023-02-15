@@ -15,10 +15,21 @@
 			Margin="5,0,5,10"
 			Padding="5"
 			Header="Demos">
-			<c:FlexGrid x:Name="flexGrid" Grid.Row="1">
+			<c:FlexGrid x:Name="flexGrid" Grid.Row="1"
+						ColumnHeaderHeight="25">
 				<c:FlexGrid.Bands>
-					<c:TextBand Width="50" Header="No" />
-					<c:TextBand Width="300" Header="Sample Names" />
+					<c:TextBand
+						Width="310"
+						Header="Description"
+						IsReadOnly="False"
+						TextBinding="{Binding Description}" />
+					<c:TemplateBand Width="30">
+						<c:TemplateBand.CellTemplate>
+							<DataTemplate>
+								<Button Command="{Binding RunCommand}" Content="Run" />
+							</DataTemplate>
+						</c:TemplateBand.CellTemplate>
+					</c:TemplateBand>
 				</c:FlexGrid.Bands>
 			</c:FlexGrid>
 		</GroupBox>
