@@ -1,4 +1,5 @@
 ﻿using KevinComponent.Demo.App.Models;
+using KevinComponent.Demo.App.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -28,7 +29,10 @@ namespace KevinComponent.Demo.App
 
 			Samples = new ObservableCollection<Sample>
 			{
-				new Sample("New Sample 1", () => new MainWindow().Show())
+				new Sample("Basic Sample", () => new BasicSampleView().Show()),
+				new Sample("Frozen Header Sample", () => { }),
+				new Sample("Merged and nested Header Sample", () => { }),
+				new Sample("VirtualBand Sample", () => { })
 			};
 
 			flexGrid.ItemsSource = Samples;

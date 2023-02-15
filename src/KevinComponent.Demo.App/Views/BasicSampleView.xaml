@@ -1,0 +1,16 @@
+﻿<Window
+	x:Class="KevinComponent.Demo.App.Views.BasicSampleView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:c="clr-namespace:KevinComponent;assembly=KevinComponent"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:KevinComponent.Demo.App.Views"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	Title="BasicSample"
+	Width="800"
+	Height="450"
+	mc:Ignorable="d">
+	<Grid>
+		<c:FlexGrid Margin="5" />
+	</Grid>
+</Window>
