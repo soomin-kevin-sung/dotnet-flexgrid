@@ -99,12 +99,12 @@
 	<SolidColorBrush x:Key="FlexGrid.Static.Background" Color="{StaticResource Grey.Grey2.Color}" />
 	<SolidColorBrush x:Key="FlexGrid.Static.Foreground" Color="{StaticResource Grey.Grey6.Color}" />
 	<SolidColorBrush x:Key="FlexGrid.Static.Border" Color="{StaticResource Grey.Grey2.Color}" />
-	<SolidColorBrush x:Key="FlexGrid.Static.HorizontalGridLines" Color="{StaticResource Grey.Grey2.Color}" />
-	<SolidColorBrush x:Key="FlexGrid.Static.VerticalGridLines" Color="Transparent" />
+	<SolidColorBrush x:Key="FlexGrid.Static.HorizontalGridLines" Color="Black" />
+	<SolidColorBrush x:Key="FlexGrid.Static.VerticalGridLines" Color="Black" />
 	<SolidColorBrush x:Key="FlexGrid.Selected.Background" Color="{StaticResource Background.Tertiary.Color}" />
 	<SolidColorBrush x:Key="FlexGrid.MouseOver.Background" Color="{StaticResource Grey.Grey1.Color}" />
 	<SolidColorBrush x:Key="BandHeader.Static.Background" Color="{StaticResource Background.Secondary.Color}" />
-	<SolidColorBrush x:Key="BandHeader.Static.Border" Color="{StaticResource Background.Primary.Color}" />
+	<SolidColorBrush x:Key="BandHeader.Static.Border" Color="Black" />
 	<SolidColorBrush x:Key="BandHeader.MouseOver.Background" Color="{StaticResource Grey.Grey1.Color}" />
 	<SolidColorBrush x:Key="BandHeader.MouseOver.Border" Color="Transparent" />
 	<SolidColorBrush x:Key="BandHeader.Pressed.Background" Color="{StaticResource Grey.Grey1.Color}" />

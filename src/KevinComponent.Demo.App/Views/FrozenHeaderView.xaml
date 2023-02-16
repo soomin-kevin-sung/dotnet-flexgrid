@@ -1,0 +1,74 @@
+﻿<Window
+	x:Class="KevinComponent.Demo.App.Views.FrozenHeaderView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:c="clr-namespace:KevinComponent;assembly=KevinComponent"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:KevinComponent.Demo.App.Views"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	Title="FrozenHeaderView"
+	Width="450"
+	Height="450"
+	mc:Ignorable="d">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+
+		<TextBlock Margin="5" Text="The column of LightGreen Cell is using FrozenBands.&#10;FrozenBand mean that's not scrollable column" />
+
+		<c:FlexGrid Grid.Row="1" c:Name="flexGrid">
+			<c:FlexGrid.FrozenBands>
+				<c:TextBand
+					Width="100"
+					HorizontalAlignment="Center"
+					Header="Name"
+					TextBinding="{Binding Name}">
+					<c:TextBand.CellStyle>
+						<Style TargetType="{x:Type DataGridCell}">
+							<Setter Property="Background" Value="LightGreen" />
+						</Style>
+					</c:TextBand.CellStyle>
+				</c:TextBand>
+
+				<c:TextBand
+					Width="150"
+					HorizontalAlignment="Center"
+					Header="BirthDate"
+					TextBinding="{Binding BirthDate}">
+					<c:TextBand.CellStyle>
+						<Style TargetType="{x:Type DataGridCell}">
+							<Setter Property="Background" Value="LightGreen" />
+						</Style>
+					</c:TextBand.CellStyle>
+				</c:TextBand>
+			</c:FlexGrid.FrozenBands>
+
+			<c:FlexGrid.Bands>
+				<c:TextBand
+					Width="200"
+					Header="Address"
+					TextBinding="{Binding Address}" />
+
+				<c:TemplateBand Width="250" Header="WebSite">
+					<c:TemplateBand.CellTemplate>
+						<DataTemplate>
+							<TextBlock>
+								<Hyperlink NavigateUri="{Binding WebSite}" RequestNavigate="OnHyperlinkRequestNavigate">
+									<TextBlock Text="{Binding WebSite}" />
+								</Hyperlink>
+							</TextBlock>
+						</DataTemplate>
+					</c:TemplateBand.CellTemplate>
+
+					<c:TemplateBand.CellEditingTemplate>
+						<DataTemplate>
+							<TextBox Text="{Binding WebSite}" />
+						</DataTemplate>
+					</c:TemplateBand.CellEditingTemplate>
+				</c:TemplateBand>
+			</c:FlexGrid.Bands>
+		</c:FlexGrid>
+	</Grid>
+</Window>

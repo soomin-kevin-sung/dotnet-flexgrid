@@ -30,7 +30,7 @@ namespace KevinComponent.Demo.App
 			Samples = new ObservableCollection<Sample>
 			{
 				new Sample("Basic Sample", () => new BasicSampleView().Show()),
-				new Sample("Frozen Header Sample", () => { }),
+				new Sample("Frozen Header Sample", () => new FrozenHeaderView().Show()),
 				new Sample("Merged and nested Header Sample", () => { }),
 				new Sample("VirtualBand Sample", () => { })
 			};
