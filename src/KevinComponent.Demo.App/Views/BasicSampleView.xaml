@@ -11,6 +11,43 @@
 	Height="450"
 	mc:Ignorable="d">
 	<Grid>
-		<c:FlexGrid Margin="5" />
+		<c:FlexGrid x:Name="flexGrid" Margin="5">
+			<c:FlexGrid.Bands>
+				<c:TextBand
+					Width="100"
+					HorizontalAlignment="Center"
+					Header="Name"
+					TextBinding="{Binding Name}" />
+
+				<c:TextBand
+					Width="150"
+					HorizontalAlignment="Center"
+					Header="BirthDate"
+					TextBinding="{Binding BirthDate}" />
+
+				<c:TextBand
+					Width="200"
+					Header="Address"
+					TextBinding="{Binding Address}" />
+
+				<c:TemplateBand Width="250" Header="WebSite">
+					<c:TemplateBand.CellTemplate>
+						<DataTemplate>
+							<TextBlock>
+								<Hyperlink NavigateUri="{Binding WebSite}" RequestNavigate="OnHyperlinkRequestNavigate">
+									<TextBlock Text="{Binding WebSite}" />
+								</Hyperlink>
+							</TextBlock>
+						</DataTemplate>
+					</c:TemplateBand.CellTemplate>
+
+					<c:TemplateBand.CellEditingTemplate>
+						<DataTemplate>
+							<TextBox Text="{Binding WebSite}" />
+						</DataTemplate>
+					</c:TemplateBand.CellEditingTemplate>
+				</c:TemplateBand>
+			</c:FlexGrid.Bands>
+		</c:FlexGrid>
 	</Grid>
 </Window>
