@@ -16,7 +16,10 @@
 			<RowDefinition />
 		</Grid.RowDefinitions>
 
-		<TextBlock Margin="5" Text="The column of LightGreen Cell is using FrozenBands.&#10;FrozenBand mean that's not scrollable column" />
+		<TextBlock
+			Margin="5"
+			FontSize="16"
+			Text="The column of LightGreen Cells are using FrozenBands.&#10;FrozenBand mean that's not scrollable column" />
 
 		<c:FlexGrid Grid.Row="1" c:Name="flexGrid">
 			<c:FlexGrid.FrozenBands>
