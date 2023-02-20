@@ -1,0 +1,57 @@
+﻿<Window
+	x:Class="KevinComponent.Demo.App.Views.MergedHeaderSampleView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:c="clr-namespace:KevinComponent;assembly=KevinComponent"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:KevinComponent.Demo.App.Views"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	Title="MergedHeaderSample"
+	Width="800"
+	Height="450"
+	mc:Ignorable="d">
+	<Grid>
+		<c:FlexGrid x:Name="flexGrid" Margin="5">
+			<c:FlexGrid.Bands>
+				<c:TextBand Header="Information">
+					<c:TextBand.Bands>
+						<c:TextBand
+							Width="100"
+							HorizontalAlignment="Center"
+							Header="Name"
+							TextBinding="{Binding Name}" />
+
+						<c:TextBand
+							Width="150"
+							HorizontalAlignment="Center"
+							Header="BirthDate"
+							TextBinding="{Binding BirthDate}" />
+
+						<c:TextBand
+							Width="200"
+							Header="Address"
+							TextBinding="{Binding Address}" />
+
+						<c:TemplateBand Width="250" Header="WebSite">
+							<c:TemplateBand.CellTemplate>
+								<DataTemplate>
+									<TextBlock>
+										<Hyperlink NavigateUri="{Binding WebSite}" RequestNavigate="OnHyperlinkRequestNavigate">
+											<TextBlock Text="{Binding WebSite}" />
+										</Hyperlink>
+									</TextBlock>
+								</DataTemplate>
+							</c:TemplateBand.CellTemplate>
+
+							<c:TemplateBand.CellEditingTemplate>
+								<DataTemplate>
+									<TextBox Text="{Binding WebSite}" />
+								</DataTemplate>
+							</c:TemplateBand.CellEditingTemplate>
+						</c:TemplateBand>
+					</c:TextBand.Bands>
+				</c:TextBand>
+			</c:FlexGrid.Bands>
+		</c:FlexGrid>
+	</Grid>
+</Window>
