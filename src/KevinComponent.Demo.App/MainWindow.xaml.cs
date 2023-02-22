@@ -32,7 +32,7 @@ namespace KevinComponent.Demo.App
 				new Sample("Basic Sample", () => new BasicSampleView().Show()),
 				new Sample("Frozen Header Sample", () => new FrozenHeaderView().Show()),
 				new Sample("Merged Header Sample", () => new MergedHeaderSampleView().Show()),
-				new Sample("VirtualBand Sample", () => { })
+				new Sample("VirtualBand Sample", () => new VirtualBandSampleView().Show())
 			};
 
 			flexGrid.ItemsSource = Samples;

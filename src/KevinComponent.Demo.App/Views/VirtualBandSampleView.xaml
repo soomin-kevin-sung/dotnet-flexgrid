@@ -1,0 +1,161 @@
+﻿<Window
+	x:Class="KevinComponent.Demo.App.Views.VirtualBandSampleView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:c="clr-namespace:KevinComponent;assembly=KevinComponent"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:KevinComponent.Demo.App.Views"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:r="clr-namespace:KevinComponent.Demo.App"
+	Title="VirtualBandSampleView"
+	Width="800"
+	Height="600"
+	mc:Ignorable="d">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="80" />
+			<RowDefinition />
+			<RowDefinition Height="2*" />
+		</Grid.RowDefinitions>
+
+		<StackPanel Grid.ColumnSpan="2" Margin="5">
+			<TextBlock Text="The Virtual Band is using for dynamic columns. (variable number of columns)" />
+			<TextBlock Margin="0,2,0,0" Text="This Sample is show scores for person-subject." />
+			<TextBlock Margin="0,2,0,0" Text="The Subject Collection can be changed and Person Collection too." />
+			<TextBlock Margin="0,2,0,0" Text="So, Use Preson Collection to FlexGrid.ItemsSource. and use Subject Collection to Virtual Band ItemsSource." />
+		</StackPanel>
+
+		<GroupBox
+			Grid.Row="1"
+			Margin="5,0,5,5"
+			Header="People">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="35" />
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+				<StackPanel>
+					<Button
+						Height="25"
+						Margin="5"
+						Click="AddPerson_Click"
+						Content="+" />
+					<Button
+						Height="25"
+						Margin="5,0,5,5"
+						Click="RemovePerson_Click"
+						Content="-" />
+				</StackPanel>
+
+				<c:FlexGrid
+					x:Name="fgdPeople"
+					Grid.Column="1"
+					Margin="5">
+					<c:FlexGrid.Bands>
+						<c:TextBand
+							Width="300"
+							Header="Name"
+							TextBinding="{Binding Name}" />
+					</c:FlexGrid.Bands>
+				</c:FlexGrid>
+			</Grid>
+		</GroupBox>
+
+		<GroupBox
+			Grid.Row="1"
+			Grid.Column="1"
+			Margin="5,0,5,5"
+			Header="Subject">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="35" />
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+				<StackPanel>
+					<Button
+						Height="25"
+						Margin="5"
+						Click="AddSubject_Click"
+						Content="+" />
+					<Button
+						Height="25"
+						Margin="5,0,5,5"
+						Click="RemovePerson_Click"
+						Content="-" />
+				</StackPanel>
+
+				<c:FlexGrid
+					x:Name="fgdSubjects"
+					Grid.Column="1"
+					Margin="5">
+					<c:FlexGrid.Bands>
+						<c:TextBand
+							Width="300"
+							Header="Name"
+							TextBinding="{Binding Name}" />
+					</c:FlexGrid.Bands>
+				</c:FlexGrid>
+			</Grid>
+		</GroupBox>
+
+		<c:FlexGrid
+			x:Name="flexGrid"
+			Grid.Row="2"
+			Grid.ColumnSpan="2">
+			<c:FlexGrid.FrozenBands>
+				<c:TextBand
+					Width="100"
+					HorizontalAlignment="Center"
+					Header="Name"
+					TextBinding="{Binding Name}" />
+
+				<c:TextBand
+					Width="150"
+					HorizontalAlignment="Center"
+					Header="BirthDate"
+					TextBinding="{Binding BirthDate}" />
+
+				<c:TextBand
+					Width="150"
+					Header="Address"
+					TextBinding="{Binding Address}" />
+			</c:FlexGrid.FrozenBands>
+
+			<c:FlexGrid.Bands>
+				<c:TextBand Header="Subject Scores">
+					<c:TextBand.Bands>
+						<c:VirtualTemplateBand
+							x:Name="vbandSubjects"
+							Width="100"
+							HeaderBinding="{Binding Name}">
+							<c:VirtualTemplateBand.CellTemplate>
+								<DataTemplate>
+									<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+										<TextBlock Text="{c:VirtualBandBinding Grade}" />
+										<TextBlock Text="(" />
+										<TextBlock Text="{c:VirtualBandBinding Value}" />
+										<TextBlock Text=")" />
+									</StackPanel>
+								</DataTemplate>
+							</c:VirtualTemplateBand.CellTemplate>
+
+							<c:VirtualTemplateBand.CellEditingTemplate>
+								<DataTemplate>
+									<TextBox
+										VerticalContentAlignment="Center"
+										Text="{c:VirtualBandBinding Value}"
+										TextAlignment="Center" />
+								</DataTemplate>
+							</c:VirtualTemplateBand.CellEditingTemplate>
+						</c:VirtualTemplateBand>
+					</c:TextBand.Bands>
+				</c:TextBand>
+			</c:FlexGrid.Bands>
+		</c:FlexGrid>
+	</Grid>
+</Window>

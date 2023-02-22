@@ -123,15 +123,22 @@ namespace KevinComponent
 				var child = VisualTreeHelper.GetChild(d, i);
 				result.AddRange(GetBindings<T>(child));
 			}
-				
-			var lve = d.GetLocalValueEnumerator();
-			while (lve.MoveNext())
+
+			var fields = d.GetType().GetFields(
+				BindingFlags.Public
+				| BindingFlags.FlattenHierarchy
+				| BindingFlags.Static).Where(f => f.FieldType == typeof(DependencyProperty));
+
+			foreach (var field in fields)
 			{
-				var current = lve.Current;
-				if (BindingOperations.IsDataBound(d, current.Property))
+				var dp = field.GetValue(null) as DependencyProperty;
+				if (dp == null)
+					continue;
+
+				if (BindingOperations.IsDataBound(d, dp))
 				{
-					if (BindingOperations.GetBindingBase(d, current.Property) is T binding)
-						result.Add((d, current.Property, binding));
+					if (BindingOperations.GetBindingBase(d, dp) is T binding)
+						result.Add((d, dp, binding));
 				}
 			}
 
