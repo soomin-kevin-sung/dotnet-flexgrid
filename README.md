@@ -7,47 +7,47 @@ So, I need DataGrid with the features I needed and I develop the FlexGrid and sh
 
 <br>
 
-# Goal
+## Goal
 
 - Create Customized DataGrid with convenient and useful features.
 - Use FlexGrid to develop other WPF Programs
 
 <br>
 
-# Available Features
+## Available Features
 
 - ### [Using Bands Instead Of Columns](#using-bands-instead-of-columns)
 - ### [Bands and Frozen Bands](#bands-and-frozen-bands)
 - ### [Mergable Column Header (Band.Bands)](#mergable-column-header-bandbands)
 - ### [Variable Columns (VirtualBand)](#variable-columns-virtualband)
 
-# Using Bands Instead Of Columns
+## Using Bands Instead Of Columns
 
 - (Writing Content...)
 
 <br>
 
-# Bands and Frozen Bands
+## Bands and Frozen Bands
 
 - (Writing Content...)
 
 <br>
 
-# Mergable Column Header (Band.Bands)
+## Mergable Column Header (Band.Bands)
 
 - (Writing Content...)
 
 <br>
 
-# Variable Columns (VirtualBand)
+## Variable Columns (VirtualBand)
 
 - (Writing Content...)
 
 <br>
 
-# Samples
+## Samples
 
-Basic Sample
+### Basic Sample
 
 - (Writing Content...)
 
@@ -69,9 +69,9 @@ Basic Sample
 
 - (Writing Content...)
 
-# Support
+## Support
 
-You can Pull request or Request New Feature.<br>
+You can "Pull request" or requesting add New Feature.<br>
 Tell me any good idea (new featrue, refactoring, improvement feature quality, etc.).<br>
 Thank you.
 
