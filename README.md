@@ -1,5 +1,10 @@
 # FlexGrid
 
+[![License](https://img.shields.io/github/license/soomin-kevin-sung/dotnet-flexgrid)](LICENSE.md)&nbsp;
+![.NET](https://img.shields.io/badge/.NET-6.0-512BD4?style=flat)&nbsp;
+![C#](https://img.shields.io/badge/.NET-C%23-007396?style=flat)&nbsp;
+![WPF](https://img.shields.io/badge/WPF-DataGrid-007396?style=flat)&nbsp;
+
 FlexGrid is Customized WPF DataGrid that has convenient and useful features.
 When developed using WPF, Microsoft-supported DataGrid has limited functionality. (Nested & Merged ColumnHeader, Variable Column, etc.)
 
