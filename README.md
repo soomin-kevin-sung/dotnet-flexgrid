@@ -16,10 +16,10 @@ So, I need DataGrid with the features I needed and I develop the FlexGrid and sh
 
 ## Available Features
 
-- ### [Using Bands Instead Of Columns](#using-bands-instead-of-columns)
-- ### [Bands and Frozen Bands](#bands-and-frozen-bands)
-- ### [Mergable Column Header (Band.Bands)](#mergable-column-header-bandbands)
-- ### [Variable Columns (VirtualBand)](#variable-columns-virtualband)
+- [Using Bands Instead Of Columns](#using-bands-instead-of-columns)
+- [Bands and Frozen Bands](#bands-and-frozen-bands)
+- [Mergable Column Header (Band.Bands)](#mergable-column-header-bandbands)
+- [Variable Columns (VirtualBand)](#variable-columns-virtualband)
 
 ## Using Bands Instead Of Columns
 
@@ -68,6 +68,8 @@ So, I need DataGrid with the features I needed and I develop the FlexGrid and sh
 ### VirtualBand Sample
 
 - (Writing Content...)
+
+<br>
 
 ## Support
 
