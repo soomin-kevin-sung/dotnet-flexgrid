@@ -5,10 +5,11 @@
 ![C#](https://img.shields.io/badge/.NET-C%23-007396?style=flat)&nbsp;
 ![WPF](https://img.shields.io/badge/WPF-DataGrid-007396?style=flat)&nbsp;
 
-FlexGrid is Customized WPF DataGrid that has convenient and useful features.
-When developed using WPF, Microsoft-supported DataGrid has limited functionality. (Nested & Merged ColumnHeader, Variable Column, etc.)
+FlexGrid is a custom WPF DataGrid with convenient and useful features. When developing code using WPF, the Microsoft-supported DataGrid has limited functionality, such as nested and merged column headers and variable columns. However, with FlexGrid, your DataGrid development environment becomes significantly more convenient!
 
-So, I need DataGrid with the features I needed and I develop the FlexGrid and shared in GitHub.
+<br>
+
+I'm proud to say that FlexGrid was fully built by me, and I'm excited to share it on GitHub :)
 
 <br>
 
@@ -25,6 +26,8 @@ So, I need DataGrid with the features I needed and I develop the FlexGrid and sh
 - [Bands and Frozen Bands](#bands-and-frozen-bands)
 - [Mergable Column Header (Band.Bands)](#mergable-column-header-bandbands)
 - [Variable Columns (VirtualBand)](#variable-columns-virtualband)
+
+<br>
 
 ## Using Bands Instead Of Columns
 
