@@ -81,8 +81,8 @@ I'm proud to say that FlexGrid was fully built by me, and I'm excited to share i
 
 ## Support
 
-You can "Pull request" or requesting add New Feature.<br>
-Tell me any good idea (new featrue, refactoring, improvement feature quality, etc.).<br>
+If you have any good ideas (such as new featrue, refactoring, improvement feature quality, etc), do not hesitate to let me know!
+You also can "Pull request" or request adding New Feature to the email below.
 Thank you.
 
 - E-mail : ssm0725@gmail.com
