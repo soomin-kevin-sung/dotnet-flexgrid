@@ -81,7 +81,7 @@ I'm proud to say that FlexGrid was fully built by me, and I'm excited to share i
 
 ## Support
 
-If you have any good ideas (such as new featrue, refactoring, improvement feature quality, etc), do not hesitate to let me know!
+If you have any good ideas (such as new featrue, refactoring, improvement feature quality, etc), do not hesitate to let me know!<br>
 You also can "Pull request" or request adding New Feature to the email below.
 Thank you.
 
