@@ -123,7 +123,7 @@
 					<ControlTemplate.Triggers>
 						<Trigger Property="IsMouseOver" Value="true">
 							<Setter TargetName="wrapper" Property="Background" Value="{StaticResource BandHeader.MouseOver.Background}" />
-							<!--<Setter TargetName="wrapper" Property="BorderBrush" Value="{StaticResource BandHeader.MouseOver.Border}" />-->
+							<Setter TargetName="wrapper" Property="BorderBrush" Value="{StaticResource BandHeader.MouseOver.Border}" />
 						</Trigger>
 
 						<Trigger Property="IsPressed" Value="true">
@@ -190,8 +190,6 @@
 	<Style TargetType="{x:Type local:FlexGrid}">
 		<Setter Property="Background" Value="{StaticResource FlexGrid.Static.Background}" />
 		<Setter Property="Foreground" Value="{StaticResource FlexGrid.Static.Foreground}" />
-		<Setter Property="HorizontalGridLinesBrush" Value="{StaticResource FlexGrid.Static.HorizontalGridLines}" />
-		<Setter Property="VerticalGridLinesBrush" Value="{StaticResource FlexGrid.Static.VerticalGridLines}" />
 		<Setter Property="GridLinesVisibility" Value="All" />
 		<Setter Property="BorderBrush" Value="{StaticResource FlexGrid.Static.Border}" />
 		<Setter Property="BorderThickness" Value="1" />

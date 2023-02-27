@@ -11,7 +11,10 @@
 	Height="450"
 	mc:Ignorable="d">
 	<Grid>
-		<c:FlexGrid x:Name="flexGrid" Margin="5">
+		<c:FlexGrid
+			x:Name="flexGrid"
+			Margin="5"
+			ColumnHeaderHeight="50">
 			<c:FlexGrid.Bands>
 				<c:TextBand Header="Information">
 					<c:TextBand.Bands>

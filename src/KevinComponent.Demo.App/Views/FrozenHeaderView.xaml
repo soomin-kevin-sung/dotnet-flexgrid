@@ -21,7 +21,10 @@
 			FontSize="16"
 			Text="The column of LightGreen Cells are using FrozenBands.&#10;FrozenBand mean that's not scrollable column" />
 
-		<c:FlexGrid Grid.Row="1" c:Name="flexGrid">
+		<c:FlexGrid
+			Grid.Row="1"
+			c:Name="flexGrid"
+			ColumnHeaderHeight="25">
 			<c:FlexGrid.FrozenBands>
 				<c:TextBand
 					Width="100"

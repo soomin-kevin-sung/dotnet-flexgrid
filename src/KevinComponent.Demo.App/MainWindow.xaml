@@ -15,8 +15,10 @@
 			Margin="5,0,5,10"
 			Padding="5"
 			Header="Demos">
-			<c:FlexGrid x:Name="flexGrid" Grid.Row="1"
-						ColumnHeaderHeight="25">
+			<c:FlexGrid
+				x:Name="flexGrid"
+				Grid.Row="1"
+				ColumnHeaderHeight="25">
 				<c:FlexGrid.Bands>
 					<c:TextBand
 						Width="310"

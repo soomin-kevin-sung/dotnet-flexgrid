@@ -1,116 +1,17 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-	<!--  UI Design Guide Colours  -->
-	<!--#region-->
-
-	<!--  Brand Colours  -->
-	<Color x:Key="Brand.Primary.Color">#FF0063C1</Color>
-	<Color x:Key="Brand.Secondary.Color">#FF408AD1</Color>
-	<Color x:Key="Brand.Tertiary.Color">#FF3A9FF2</Color>
-
-	<Color x:Key="Brand.PrimarySub.Color">#FF99C1E6</Color>
-	<Color x:Key="Brand.SecondarySub.Color">#FFBCD6EF</Color>
-	<Color x:Key="Brand.TertiarySub.Color">#FFC4E3FF</Color>
-
-	<!--  Point Colours  -->
-	<Color x:Key="Point.Primary.Color">#FFFF3C24</Color>
-
-	<!--  Background Colours  -->
-	<Color x:Key="Background.Primary.Color">#FFF5F7F8</Color>
-	<Color x:Key="Background.Secondary.Color">#FFD5DDE5</Color>
-	<Color x:Key="Background.Tertiary.Color">#FFE8F7FF</Color>
-
-	<!--  Border Colours  -->
-	<Color x:Key="Border.White.Color">#FFFFFFFF</Color>
-	<Color x:Key="Border.Primary.Color">#FFDBDBDB</Color>
-	<Color x:Key="Border.Secondary.Color">#FFBFBFBF</Color>
-
-	<!--  Grey Colours  -->
-	<Color x:Key="Grey.White.Color">#FFFFFFFF</Color>
-	<Color x:Key="Grey.Grey1.Color">#FFF1F1F1</Color>
-	<Color x:Key="Grey.Grey2.Color">#FFDBDBDB</Color>
-	<Color x:Key="Grey.Grey3.Color">#FFBFBFBF</Color>
-	<Color x:Key="Grey.Grey4.Color">#FF8C8C8C</Color>
-	<Color x:Key="Grey.Grey5.Color">#FF666666</Color>
-	<Color x:Key="Grey.Grey6.Color">#FF222222</Color>
-
-	<!--  Status Colours  -->
-	<Color x:Key="Status.Pass.Color">#FF0DA856</Color>
-	<Color x:Key="Status.Fail.Color">#FFFF3C24</Color>
-
-	<!--  Gradient Colours  -->
-	<GradientStopCollection x:Key="Gradient.Primary.GradientStops">
-		<GradientStop Offset="0" Color="#FFFFFFFF" />
-		<GradientStop Offset="1" Color="#FFD9D9D9" />
-	</GradientStopCollection>
-
-	<GradientStopCollection x:Key="Gradient.Secondary.GradientStops">
-		<GradientStop Offset="0" Color="{StaticResource Status.Pass.Color}" />
-		<GradientStop Offset="1" Color="{StaticResource Status.Fail.Color}" />
-	</GradientStopCollection>
-
-	<!--#endregion-->
-
-	<!--  UI Design Guide Brushes  -->
-	<!--#region-->
-
-	<!--  Brand Brushes  -->
-	<SolidColorBrush x:Key="Brand.Primary.Brush" Color="{StaticResource Brand.Primary.Color}" />
-	<SolidColorBrush x:Key="Brand.Secondary.Brush" Color="{StaticResource Brand.Secondary.Color}" />
-	<SolidColorBrush x:Key="Brand.Tertiary.Brush" Color="{StaticResource Brand.Tertiary.Color}" />
-
-	<SolidColorBrush x:Key="Brand.PrimarySub.Brush" Color="{StaticResource Brand.PrimarySub.Color}" />
-	<SolidColorBrush x:Key="Brand.SecondarySub.Brush" Color="{StaticResource Brand.SecondarySub.Color}" />
-	<SolidColorBrush x:Key="Brand.TertiarySub.Brush" Color="{StaticResource Brand.TertiarySub.Color}" />
-
-	<!--  Point Brushes  -->
-	<SolidColorBrush x:Key="Point.Primary.Brush" Color="{StaticResource Point.Primary.Color}" />
-
-	<!--  Background Brushes  -->
-	<SolidColorBrush x:Key="Background.Primary.Brush" Color="{StaticResource Background.Primary.Color}" />
-	<SolidColorBrush x:Key="Background.Secondary.Brush" Color="{StaticResource Background.Secondary.Color}" />
-	<SolidColorBrush x:Key="Background.Tertiary.Brush" Color="{StaticResource Background.Tertiary.Color}" />
-
-	<!--  Border Brushes  -->
-	<SolidColorBrush x:Key="Border.White.Brush" Color="{StaticResource Border.White.Color}" />
-	<SolidColorBrush x:Key="Border.Primary.Brush" Color="{StaticResource Border.Primary.Color}" />
-	<SolidColorBrush x:Key="Border.Secondary.Brush" Color="{StaticResource Border.Secondary.Color}" />
-
-	<!--  Grey Brushes  -->
-	<SolidColorBrush x:Key="Grey.White.Brush" Color="{StaticResource Grey.White.Color}" />
-	<SolidColorBrush x:Key="Grey.Grey1.Brush" Color="{StaticResource Grey.Grey1.Color}" />
-	<SolidColorBrush x:Key="Grey.Grey2.Brush" Color="{StaticResource Grey.Grey2.Color}" />
-	<SolidColorBrush x:Key="Grey.Grey3.Brush" Color="{StaticResource Grey.Grey3.Color}" />
-	<SolidColorBrush x:Key="Grey.Grey4.Brush" Color="{StaticResource Grey.Grey4.Color}" />
-	<SolidColorBrush x:Key="Grey.Grey5.Brush" Color="{StaticResource Grey.Grey5.Color}" />
-	<SolidColorBrush x:Key="Grey.Grey6.Brush" Color="{StaticResource Grey.Grey6.Color}" />
-
-	<!--  Status Colours  -->
-	<SolidColorBrush x:Key="Status.Pass.Brush" Color="{StaticResource Status.Pass.Color}" />
-	<SolidColorBrush x:Key="Status.Fail.Brush" Color="{StaticResource Status.Fail.Color}" />
-
-	<!--  Gradient Colours  -->
-	<LinearGradientBrush x:Key="Gradient.Primary.Brush" GradientStops="{StaticResource Gradient.Primary.GradientStops}" StartPoint="0 0" EndPoint="0 1" />
-	<LinearGradientBrush x:Key="Gradient.Secondary.Brush" GradientStops="{StaticResource Gradient.Secondary.GradientStops}" StartPoint="0 0" EndPoint="0 1" />
-
-	<!--#endregion-->
-
 	<!--  FlexGrid  -->
-	<SolidColorBrush x:Key="FlexGrid.Static.Background" Color="{StaticResource Grey.Grey2.Color}" />
-	<SolidColorBrush x:Key="FlexGrid.Static.Foreground" Color="{StaticResource Grey.Grey6.Color}" />
-	<SolidColorBrush x:Key="FlexGrid.Static.Border" Color="{StaticResource Grey.Grey2.Color}" />
-	<SolidColorBrush x:Key="FlexGrid.Static.HorizontalGridLines" Color="Black" />
-	<SolidColorBrush x:Key="FlexGrid.Static.VerticalGridLines" Color="Black" />
-	<SolidColorBrush x:Key="FlexGrid.Selected.Background" Color="{StaticResource Background.Tertiary.Color}" />
-	<SolidColorBrush x:Key="FlexGrid.MouseOver.Background" Color="{StaticResource Grey.Grey1.Color}" />
-	<SolidColorBrush x:Key="BandHeader.Static.Background" Color="{StaticResource Background.Secondary.Color}" />
+	<SolidColorBrush x:Key="FlexGrid.Static.Background" Color="{x:Static SystemColors.ControlColor}" />
+	<SolidColorBrush x:Key="FlexGrid.Static.Foreground" Color="#222222" />
+	<SolidColorBrush x:Key="FlexGrid.Static.Border" Color="#D5DFE8" />
+	<SolidColorBrush x:Key="BandHeader.Static.Background" Color="{x:Static SystemColors.ControlLightColor}" />
 	<SolidColorBrush x:Key="BandHeader.Static.Border" Color="Black" />
-	<SolidColorBrush x:Key="BandHeader.MouseOver.Background" Color="{StaticResource Grey.Grey1.Color}" />
-	<SolidColorBrush x:Key="BandHeader.MouseOver.Border" Color="Transparent" />
-	<SolidColorBrush x:Key="BandHeader.Pressed.Background" Color="{StaticResource Grey.Grey1.Color}" />
-	<SolidColorBrush x:Key="BandHeader.Pressed.Border" Color="Transparent" />
-	<SolidColorBrush x:Key="BandHeader.Disabled.Background" Color="{StaticResource Grey.Grey2.Color}" />
-	<SolidColorBrush x:Key="BandHeader.Disabled.Border" Color="Transparent" />
-	<SolidColorBrush x:Key="BandHeader.Disabled.Foreground" Color="{StaticResource Grey.Grey6.Color}" />
+	<SolidColorBrush x:Key="BandHeader.MouseOver.Background" Color="{x:Static SystemColors.ControlColor}" />
+	<SolidColorBrush x:Key="BandHeader.MouseOver.Border" Color="Black" />
+	<SolidColorBrush x:Key="BandHeader.Pressed.Background" Color="{x:Static SystemColors.ControlDarkColor}" />
+	<SolidColorBrush x:Key="BandHeader.Pressed.Border" Color="Black" />
+	<SolidColorBrush x:Key="BandHeader.Disabled.Background" Color="#F4F4F4" />
+	<SolidColorBrush x:Key="BandHeader.Disabled.Border" Color="Black" />
+	<SolidColorBrush x:Key="BandHeader.Disabled.Foreground" Color="#222222" />
 
 </ResourceDictionary>

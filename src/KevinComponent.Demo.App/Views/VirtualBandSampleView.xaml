@@ -55,7 +55,8 @@
 				<c:FlexGrid
 					x:Name="fgdPeople"
 					Grid.Column="1"
-					Margin="5">
+					Margin="5"
+					ColumnHeaderHeight="25">
 					<c:FlexGrid.Bands>
 						<c:TextBand
 							Width="300"
@@ -92,7 +93,8 @@
 				<c:FlexGrid
 					x:Name="fgdSubjects"
 					Grid.Column="1"
-					Margin="5">
+					Margin="5"
+					ColumnHeaderHeight="25">
 					<c:FlexGrid.Bands>
 						<c:TextBand
 							Width="300"
@@ -106,7 +108,8 @@
 		<c:FlexGrid
 			x:Name="flexGrid"
 			Grid.Row="2"
-			Grid.ColumnSpan="2">
+			Grid.ColumnSpan="2"
+			ColumnHeaderHeight="50">
 			<c:FlexGrid.FrozenBands>
 				<c:TextBand
 					Width="100"
