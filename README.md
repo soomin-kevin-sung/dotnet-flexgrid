@@ -57,19 +57,43 @@ I'm proud to say that FlexGrid was fully built by me, and I'm excited to share i
 
 ### Basic Sample
 
-- (Writing Content...)
+<p align="center">
+  <img src="./resources/images/BasicSample.gif" alt="BasicSample.gif" />
+  <br>
+  &lt;BasicSample ScreenShot&gt;
+</p>
+
+- **BasicSample** demonstrates the basic usage of FlexGrid.
+<br>
+- You can know how to use **FlexGrid** the basically in this sample.
 
 <br>
 
 ### Frozen Header Sample
 
-- (Writing Content...)
+<p align="center">
+  <img src="./resources/images/FrozenHeaderSample.gif" alt="BasicSample.gif" />
+  <br>
+  &lt;FrozenHedaerSample ScreenShot&gt;
+</p>
+
+- FrozenHedaerSample demonstrates how to using the frozen columns.<br>
+- You can use **FlexGrid.FrozenBands** to add frozen columns.
+- In this sample, the Name, BirthDate bands are being represented as Frozen Bands.
 
 <br>
 
 ### Merged Header Sample
 
-- (Writing Content...)
+<p align="center">
+  <img src="./resources/images/MergedHeaderSample.gif" alt="BasicSample.gif" />
+  <br>
+  &lt;MergedHedaerSample ScreenShot&gt;
+</p>
+
+- MergedHedaerSample demonstrates how to merge column headers.<br>
+- You can use **Band.Bands**(ex. TextBand.Bands, CheckBoxBand.Bands, etc.) to merge column headers.
+- In this sample, you can see the Name, BirthDate, Address, and WebSite bands merged into the information band.
 
 <br>
 
