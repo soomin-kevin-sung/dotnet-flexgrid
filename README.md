@@ -63,8 +63,7 @@ I'm proud to say that FlexGrid was fully built by me, and I'm excited to share i
   &lt;BasicSample ScreenShot&gt;
 </p>
 
-- **BasicSample** demonstrates the basic usage of FlexGrid.
-<br>
+- **BasicSample** demonstrates the basic usage of FlexGrid.<br>
 - You can know how to use **FlexGrid** the basically in this sample.
 
 <br>
