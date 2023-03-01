@@ -58,7 +58,7 @@ namespace KevinComponent.Demo.App.Views
 		private void RemovePerson_Click(object sender, RoutedEventArgs e)
 		{
 			var items = fgdPeople.SelectedItems;
-			foreach (Person item in items)
+			foreach (Person item in items.Cast<Person>().ToArray())
 				_people.Remove(item);
 		}
 
@@ -72,7 +72,7 @@ namespace KevinComponent.Demo.App.Views
 		private void RemoveSubject_Click(object sender, RoutedEventArgs e)
 		{
 			var items = fgdSubjects.SelectedItems;
-			foreach (Subject item in items)
+			foreach (Subject item in items.Cast<Subject>().ToArray())
 				_subjects.Remove(item);
 		}
 	}

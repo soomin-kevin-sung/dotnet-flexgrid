@@ -86,7 +86,7 @@
 					<Button
 						Height="25"
 						Margin="5,0,5,5"
-						Click="RemovePerson_Click"
+						Click="RemoveSubject_Click"
 						Content="-" />
 				</StackPanel>
 
