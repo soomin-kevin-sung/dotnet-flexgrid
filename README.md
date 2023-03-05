@@ -32,7 +32,7 @@ I'm proud to say that FlexGrid was fully built by me, and I'm excited to share i
 
 ## FlexGrid Template Structure
 
-FlexGrid is a Component that modifies the Template of the default DataGrid.
+FlexGrid is a Component that modified the Template of the default DataGrid.
 
 <p align="center">
   <img src="./resources/images/FlexGridTemplateStructure.png" alt="FlexGridTemplateStructure.png" />
