@@ -22,6 +22,7 @@ I'm proud to say that FlexGrid was fully built by me, and I'm excited to share i
 
 ## Available Features
 
+- [FlexGrid Template Structure](#using-bands-instead-of-columns)
 - [Using Bands Instead Of Columns](#using-bands-instead-of-columns)
 - [Bands and Frozen Bands](#bands-and-frozen-bands)
 - [Mergable Column Header (Band.Bands)](#mergable-column-header-bandbands)
@@ -29,9 +30,83 @@ I'm proud to say that FlexGrid was fully built by me, and I'm excited to share i
 
 <br>
 
+## FlexGrid Template Structure
+
+FlexGrid is a Component that modifies the Template of the default DataGrid.
+
+<p align="center">
+  <img src="./resources/images/FlexGridTemplateStructure.png" alt="FlexGridTemplateStructure.png" />
+  <br>
+  &lt;FlexGrid Template Structure&gt;
+</p>
+
 ## Using Bands Instead Of Columns
 
-- (Writing Content...)
+FlexGrid uses BandHeadersPresenters to represent the columns. The BandHeaderPresenter represents the Bands in FlexGrid.FrozenBands and FlexGrid.Bands as Columns in the FlexGrid.
+
+### Band Types
+
+- TextBand
+- CheckBoxBand
+- ComboBoxBand
+- TemplateBand
+- VirtualBand
+  - VirtualTextBand
+  - VirtualCheckBoxBand
+  - VirtualComboBoxBand
+  - VirtualTemplateBand
+
+This is Sample Code how to use Bands.
+
+```xml
+<c:FlexGrid
+      x:Name="flexGrid"
+      Margin="5"
+      ColumnHeaderHeight="50">
+      <c:FlexGrid.Bands>
+        <c:TextBand Header="Information">
+          <c:TextBand.Bands>
+            <c:TextBand
+              Width="100"
+              HorizontalAlignment="Center"
+              Header="Name"
+              TextBinding="{Binding Name}" />
+
+            <c:TextBand
+              Width="150"
+              HorizontalAlignment="Center"
+              Header="BirthDate"
+              TextBinding="{Binding BirthDate}" />
+
+            <c:TextBand
+              Width="200"
+              Header="Address"
+              TextBinding="{Binding Address}" />
+
+            <c:TemplateBand Width="250" Header="WebSite">
+              <c:TemplateBand.CellTemplate>
+                <DataTemplate>
+                  <TextBlock>
+                    <Hyperlink
+                      NavigateUri="{Binding WebSite}"
+                      RequestNavigate="OnHyperlinkRequestNavigate">
+                      <TextBlock Text="{Binding WebSite}" />
+                    </Hyperlink>
+                  </TextBlock>
+                </DataTemplate>
+              </c:TemplateBand.CellTemplate>
+
+              <c:TemplateBand.CellEditingTemplate>
+                <DataTemplate>
+                  <TextBox Text="{Binding WebSite}" />
+                </DataTemplate>
+              </c:TemplateBand.CellEditingTemplate>
+            </c:TemplateBand>
+          </c:TextBand.Bands>
+        </c:TextBand>
+      </c:FlexGrid.Bands>
+    </c:FlexGrid>
+```
 
 <br>
 
@@ -111,7 +186,7 @@ I'm proud to say that FlexGrid was fully built by me, and I'm excited to share i
 <p align="center">
   <img src="./resources/images/VirtualBandSample_ItemsSource_Image.png" alt="VirtualBandSample.gif" width=720px/>
   <br>
-  &lt;Representation of ItemsSource&gt;
+  &lt;ItemsSource Description&gt;
 </p>
 
 <br>
