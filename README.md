@@ -22,7 +22,7 @@ I'm proud to say that FlexGrid was fully built by me, and I'm excited to share i
 
 ## Available Features
 
-- [FlexGrid Template Structure](#using-bands-instead-of-columns)
+- [FlexGrid Template Structure](#flexgrid-template-structure)
 - [Using Bands Instead Of Columns](#using-bands-instead-of-columns)
 - [Bands and Frozen Bands](#bands-and-frozen-bands)
 - [Mergable Column Header (Band.Bands)](#mergable-column-header-bandbands)
