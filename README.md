@@ -62,39 +62,37 @@ This is Sample Code how to use Bands.
 <!-- xmlns:c="clr-namespace:KevinComponent;assembly=KevinComponent" -->
 
 <c:FlexGrid>
+  <!-- Here is start of code to add Bands. -->
   <c:FlexGrid.Bands>
-    <c:TextBand Header="Information">
-      <c:TextBand.Bands>
-        <!-- TextBand -->
-        <c:TextBand
-          Width="100"
-          HorizontalAlignment="Center"
-          Header="Name"
-          TextBinding="{Binding Name}" />
 
-        <!-- TemplateBand -->
-        <c:TemplateBand Width="250" Header="WebSite">
-          <c:TemplateBand.CellTemplate>
-            <DataTemplate>
-              <TextBlock>
-                <Hyperlink
-                  NavigateUri="{Binding WebSite}"
-                  RequestNavigate="OnHyperlinkRequestNavigate">
-                  <TextBlock Text="{Binding WebSite}" />
-                </Hyperlink>
-              </TextBlock>
-            </DataTemplate>
-          </c:TemplateBand.CellTemplate>
+    <!-- TextBand -->
+    <c:TextBand
+      Width="100"
+      HorizontalAlignment="Center"
+      Header="Name"
+      TextBinding="{Binding Name}" />
 
-          <c:TemplateBand.CellEditingTemplate>
-            <DataTemplate>
-              <TextBox Text="{Binding WebSite}" />
-            </DataTemplate>
-          </c:TemplateBand.CellEditingTemplate>
-        </c:TemplateBand>
+    <!-- TemplateBand -->
+    <c:TemplateBand Width="250" Header="WebSite">
+      <c:TemplateBand.CellTemplate>
+        <DataTemplate>
+          <TextBlock>
+            <Hyperlink
+              NavigateUri="{Binding WebSite}"
+              RequestNavigate="OnHyperlinkRequestNavigate">
+              <TextBlock Text="{Binding WebSite}" />
+            </Hyperlink>
+          </TextBlock>
+        </DataTemplate>
+      </c:TemplateBand.CellTemplate>
 
-      </c:TextBand.Bands>
-    </c:TextBand>
+      <c:TemplateBand.CellEditingTemplate>
+        <DataTemplate>
+          <TextBox Text="{Binding WebSite}" />
+        </DataTemplate>
+      </c:TemplateBand.CellEditingTemplate>
+    </c:TemplateBand>
+
   </c:FlexGrid.Bands>
 </c:FlexGrid>
 ```
@@ -112,7 +110,9 @@ This is Sample Code how to use Frozen Bands.
 <!-- xmlns:c="clr-namespace:KevinComponent;assembly=KevinComponent" -->
 
 <c:FlexGrid>
+  <!-- Here is start of code to add frozen bands. -->
   <c:FlexGrid.FrozenBands>
+  
     <c:TextBand
       Width="100"
       HorizontalAlignment="Center"
@@ -125,11 +125,16 @@ This is Sample Code how to use Frozen Bands.
       Header="BirthDate"
       TextBinding="{Binding BirthDate}" />
 
+  </c:FlexGrid.FrozenBands>
+
+  <!-- code to add default bands. -->
   <c:FlexGrid.Bands>
+
     <c:TextBand
       Width="200"
       Header="Address"
       TextBinding="{Binding Address}" />
+
   </c:FlexGrid.Bands>
 </c:FlexGrid>
 ```
