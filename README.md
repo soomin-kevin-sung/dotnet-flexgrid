@@ -59,60 +59,80 @@ FlexGrid uses BandHeadersPresenters to represent the columns. The BandHeaderPres
 This is Sample Code how to use Bands.
 
 ```xml
-<c:FlexGrid
-      x:Name="flexGrid"
-      Margin="5"
-      ColumnHeaderHeight="50">
-      <c:FlexGrid.Bands>
-        <c:TextBand Header="Information">
-          <c:TextBand.Bands>
-            <c:TextBand
-              Width="100"
-              HorizontalAlignment="Center"
-              Header="Name"
-              TextBinding="{Binding Name}" />
+<!-- xmlns:c="clr-namespace:KevinComponent;assembly=KevinComponent" -->
 
-            <c:TextBand
-              Width="150"
-              HorizontalAlignment="Center"
-              Header="BirthDate"
-              TextBinding="{Binding BirthDate}" />
+<c:FlexGrid>
+  <c:FlexGrid.Bands>
+    <c:TextBand Header="Information">
+      <c:TextBand.Bands>
+        <!-- TextBand -->
+        <c:TextBand
+          Width="100"
+          HorizontalAlignment="Center"
+          Header="Name"
+          TextBinding="{Binding Name}" />
 
-            <c:TextBand
-              Width="200"
-              Header="Address"
-              TextBinding="{Binding Address}" />
+        <!-- TemplateBand -->
+        <c:TemplateBand Width="250" Header="WebSite">
+          <c:TemplateBand.CellTemplate>
+            <DataTemplate>
+              <TextBlock>
+                <Hyperlink
+                  NavigateUri="{Binding WebSite}"
+                  RequestNavigate="OnHyperlinkRequestNavigate">
+                  <TextBlock Text="{Binding WebSite}" />
+                </Hyperlink>
+              </TextBlock>
+            </DataTemplate>
+          </c:TemplateBand.CellTemplate>
 
-            <c:TemplateBand Width="250" Header="WebSite">
-              <c:TemplateBand.CellTemplate>
-                <DataTemplate>
-                  <TextBlock>
-                    <Hyperlink
-                      NavigateUri="{Binding WebSite}"
-                      RequestNavigate="OnHyperlinkRequestNavigate">
-                      <TextBlock Text="{Binding WebSite}" />
-                    </Hyperlink>
-                  </TextBlock>
-                </DataTemplate>
-              </c:TemplateBand.CellTemplate>
+          <c:TemplateBand.CellEditingTemplate>
+            <DataTemplate>
+              <TextBox Text="{Binding WebSite}" />
+            </DataTemplate>
+          </c:TemplateBand.CellEditingTemplate>
+        </c:TemplateBand>
 
-              <c:TemplateBand.CellEditingTemplate>
-                <DataTemplate>
-                  <TextBox Text="{Binding WebSite}" />
-                </DataTemplate>
-              </c:TemplateBand.CellEditingTemplate>
-            </c:TemplateBand>
-          </c:TextBand.Bands>
-        </c:TextBand>
-      </c:FlexGrid.Bands>
-    </c:FlexGrid>
+      </c:TextBand.Bands>
+    </c:TextBand>
+  </c:FlexGrid.Bands>
+</c:FlexGrid>
 ```
 
 <br>
 
 ## Bands and Frozen Bands
 
-- (Writing Content...)
+For represent Frozen Columns (Always showed Columns) in FlexGrid. You should use FlexGrid.FrozenBands.  
+The FlexGrid shows to Bands in FlexGrid.FrozenBands as Frozen Columns.
+
+This is Sample Code how to use Frozen Bands.
+
+```xml
+<!-- xmlns:c="clr-namespace:KevinComponent;assembly=KevinComponent" -->
+
+<c:FlexGrid>
+  <c:FlexGrid.FrozenBands>
+    <c:TextBand
+      Width="100"
+      HorizontalAlignment="Center"
+      Header="Name"
+      TextBinding="{Binding Name}" />
+
+    <c:TextBand
+      Width="150"
+      HorizontalAlignment="Center"
+      Header="BirthDate"
+      TextBinding="{Binding BirthDate}" />
+
+  <c:FlexGrid.Bands>
+    <c:TextBand
+      Width="200"
+      Header="Address"
+      TextBinding="{Binding Address}" />
+  </c:FlexGrid.Bands>
+</c:FlexGrid>
+```
 
 <br>
 
