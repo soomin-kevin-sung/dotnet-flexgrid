@@ -21,10 +21,7 @@ namespace KevinComponent
 
 		public TextBand() { }
 
-		internal TextBand(VirtualBand virtualBand) : base(virtualBand)
-		{
-
-		}
+		internal TextBand(VirtualBand virtualBand) : base(virtualBand) { }
 
 		internal TextBand(VirtualTextBand virtualBand) : base(virtualBand)
 		{
@@ -215,15 +212,11 @@ namespace KevinComponent
 		{
 			base.OnPropertyChanged(e);
 
-			if (e.Property == IsNumericProperty)
-				OwnerFlexGrid?.RefreshCells(this);
-			else if (e.Property == AllowNegativeProperty)
-				OwnerFlexGrid?.RefreshCells(this);
-			else if (e.Property == TextAlignmentProperty)
-				OwnerFlexGrid?.RefreshCells(this);
-			else if (e.Property == TextVerticalAlignmentProperty)
-				OwnerFlexGrid?.RefreshCells(this);
-			else if (e.Property == OverrideTextAlignmentProperty)
+			if (e.Property == IsNumericProperty
+				|| e.Property == AllowNegativeProperty
+				|| e.Property == TextAlignmentProperty
+				|| e.Property == TextVerticalAlignmentProperty
+				|| e.Property == OverrideTextAlignmentProperty)
 				OwnerFlexGrid?.RefreshCells(this);
 		}
 

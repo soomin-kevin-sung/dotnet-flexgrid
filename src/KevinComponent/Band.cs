@@ -634,10 +634,7 @@ namespace KevinComponent
 
 		#region Protected Virtual Methods
 
-		protected virtual void OnParentBandChanged(Band? oldParent, Band? newParent)
-		{
-
-		}
+		protected virtual void OnParentBandChanged(Band? oldParent, Band? newParent) { }
 
 		protected virtual void OnOwnerFlexGridChanged(FlexGrid? oldOwnerFlexGrid, FlexGrid? newOwnerFlexGrid)
 		{
@@ -659,10 +656,7 @@ namespace KevinComponent
 			}
 		}
 
-		protected virtual void OnCellEditingTemplateChanged(DataTemplate oldValue, DataTemplate newValue)
-		{
-
-		}
+		protected virtual void OnCellEditingTemplateChanged(DataTemplate oldValue, DataTemplate newValue) { }
 
 		protected virtual void OnCellStyleChanged(Style oldValue, Style newValue)
 		{
@@ -670,20 +664,14 @@ namespace KevinComponent
 				SyncDataGridColumn.CellStyle = newValue;
 		}
 
-		protected virtual void OnCellTemplateLoaded(ContentPresenter contentPresenter)
-		{
-
-		}
+		protected virtual void OnCellTemplateLoaded(ContentPresenter contentPresenter) { }
 
 		protected virtual void OnCellEditingTemplateLoaded(ContentPresenter contentPresenter)
 		{
 			OnCellTemplateLoaded(contentPresenter);
 		}
 
-		protected virtual void PrepareEdit(ContentPresenter contentPresenter)
-		{
-
-		}
+		protected virtual void PrepareEdit(ContentPresenter contentPresenter) { }
 
 		#endregion
 
