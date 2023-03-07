@@ -1,5 +1,6 @@
 # FlexGrid
 
+[![CodeFactor](https://www.codefactor.io/repository/github/soomin-kevin-sung/dotnet-flexgrid/badge/master)](https://www.codefactor.io/repository/github/soomin-kevin-sung/dotnet-flexgrid/overview/master)&nbsp;
 [![License](https://img.shields.io/github/license/soomin-kevin-sung/dotnet-flexgrid)](LICENSE.md)&nbsp;
 ![.NET](https://img.shields.io/badge/.NET-6.0-512BD4?style=flat)&nbsp;
 ![C#](https://img.shields.io/badge/.NET-C%23-007396?style=flat)&nbsp;
