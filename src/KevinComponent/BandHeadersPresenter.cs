@@ -20,10 +20,7 @@ namespace KevinComponent
 			DefaultStyleKeyProperty.OverrideMetadata(typeof(BandHeadersPresenter), new FrameworkPropertyMetadata(typeof(BandHeadersPresenter)));
 		}
 
-		public BandHeadersPresenter()
-		{
-
-		}
+		public BandHeadersPresenter() { }
 
 		#region Contants
 
@@ -170,7 +167,6 @@ namespace KevinComponent
 			_frozenBandsWrapper = GetTemplateChild(FrozenBandsWrapperPartName) as Grid;
 			_bandsScrollViewer = GetTemplateChild(BandsScrollViewerPartName) as ScrollViewer;
 			_bandsWrapper = GetTemplateChild(BandsWrapperPartName) as Grid;
-
 		}
 
 		#endregion

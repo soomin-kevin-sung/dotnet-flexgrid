@@ -15,7 +15,6 @@ namespace KevinComponent.Demo.App.Models
 		{
 			_name = name;
 			_scoreBySubject = new Dictionary<Subject, Score>();
-
 		}
 
 		public Person(string name, DateTime birthDate, string address, string? webSite = null)

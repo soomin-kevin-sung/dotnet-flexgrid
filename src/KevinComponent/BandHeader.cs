@@ -95,10 +95,7 @@ namespace KevinComponent
 
 		#region Private EventHandlers
 
-		private void OnRightGripperDragStarted(object sender, DragStartedEventArgs e)
-		{
-
-		}
+		private void OnRightGripperDragStarted(object sender, DragStartedEventArgs e) { }
 
 		private void OnRightGripperDragDelta(object sender, DragDeltaEventArgs e)
 		{
@@ -109,14 +106,12 @@ namespace KevinComponent
 			}
 		}
 
-		private void OnRightGripperDragCompleted(object sender, DragCompletedEventArgs e)
-		{
-
-		}
+		private void OnRightGripperDragCompleted(object sender, DragCompletedEventArgs e) { }
 
 		private void OnRightGripperDoubleClicked(object sender, MouseButtonEventArgs e)
 		{
-			// gripper 더블 클릭 시 Action 개발 필요.
+			// TODO : Auto Fit Width To BandHeaders.
+			// not developed yet.
 			if (OwnerBand != null)
 			{
 				var rightBand = OwnerBand;

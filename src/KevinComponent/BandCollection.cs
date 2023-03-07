@@ -186,7 +186,6 @@ namespace KevinComponent
 			if (ParentBand is VirtualBand)
 				throw new InvalidOperationException("Cannot modify child bands when ParentBand is VirtualBand Type.");
 
-
 			item.ParentBand = ParentBand;
 			item.OwnerFlexGrid = OwnerFlexGrid;
 
