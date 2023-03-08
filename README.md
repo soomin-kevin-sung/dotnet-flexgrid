@@ -57,7 +57,7 @@ FlexGrid uses BandHeadersPresenters to represent the columns. The BandHeaderPres
   - VirtualComboBoxBand
   - VirtualTemplateBand
 
-This is Sample Code how to use Bands.
+This is Example how to use Bands.
 
 ```xml
 <!-- xmlns:c="clr-namespace:KevinComponent;assembly=KevinComponent" -->
@@ -105,7 +105,7 @@ This is Sample Code how to use Bands.
 For represent Frozen Columns (Always showed Columns) in FlexGrid. You should use FlexGrid.FrozenBands.  
 The FlexGrid shows to Bands in FlexGrid.FrozenBands as Frozen Columns.
 
-This is Sample Code how to use Frozen Bands.
+This is Example Code how to use Frozen Bands.
 
 ```xml
 <!-- xmlns:c="clr-namespace:KevinComponent;assembly=KevinComponent" -->
