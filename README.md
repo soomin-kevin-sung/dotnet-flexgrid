@@ -31,6 +31,10 @@ I'm proud to say that FlexGrid was fully built by me, and I'm excited to share i
 
 <br>
 
+## Upcoming Features
+
+- Background Color, BandHeader Color can modified by developers.
+
 ## FlexGrid Template Structure
 
 FlexGrid is a Component that modified the Template of the default DataGrid.
