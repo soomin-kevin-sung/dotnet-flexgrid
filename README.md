@@ -150,9 +150,72 @@ This is Example Code how to use Frozen Bands.
 
 ## Mergable Column Header (Band.Bands)
 
-FlexGrid can represent Merged Column Headers.
+The Bands Property in Band can be used to represent Merged Column Headers.
 
-- (Writing Content...)
+<p align="center">
+  <img src="./resources/images/FlexGridMergedHeader.png" alt="FlexGridMergedHeader.png" />
+  <br>
+  &lt;Merged Column Headers&gt;
+</p>
+
+This is Example Code how to use Band.Bands Object.
+
+```xml
+<!-- xmlns:c="clr-namespace:KevinComponent;assembly=KevinComponent" -->
+
+<c:FlexGrid>
+  <c:FlexGrid.Bands>
+
+    <!-- Here is start of code to add root band. -->
+    <c:TextBand Header="Information">
+      <!-- code to add sub bands. -->
+      <c:TextBand.Bands>
+
+        <!-- TextBand -->
+        <c:TextBand
+          Width="100"
+          HorizontalAlignment="Center"
+          Header="Name"
+          TextBinding="{Binding Name}" />
+
+        <!-- TextBand -->
+        <c:TextBand
+          Width="150"
+          HorizontalAlignment="Center"
+          Header="BirthDate"
+          TextBinding="{Binding BirthDate}" />
+
+        <!-- TextBand -->
+        <c:TextBand
+          Width="200"
+          Header="Address"
+          TextBinding="{Binding Address}" />
+
+        <!-- TemplateBand -->
+        <c:TemplateBand Width="250" Header="WebSite">
+          <c:TemplateBand.CellTemplate>
+            <DataTemplate>
+              <TextBlock>
+                <Hyperlink NavigateUri="{Binding WebSite}" RequestNavigate="OnHyperlinkRequestNavigate">
+                  <TextBlock Text="{Binding WebSite}" />
+                </Hyperlink>
+              </TextBlock>
+            </DataTemplate>
+          </c:TemplateBand.CellTemplate>
+
+          <c:TemplateBand.CellEditingTemplate>
+            <DataTemplate>
+              <TextBox Text="{Binding WebSite}" />
+            </DataTemplate>
+          </c:TemplateBand.CellEditingTemplate>
+        </c:TemplateBand>
+
+      </c:TextBand.Bands>
+    </c:TextBand>
+
+  </c:FlexGrid.Bands>
+</c:FlexGrid>
+```
 
 <br>
 
