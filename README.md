@@ -35,6 +35,8 @@ I'm proud to say that FlexGrid was fully built by me, and I'm excited to share i
 
 - Background Color, BandHeader Color can modified by developers.
 
+<br>
+
 ## FlexGrid Template Structure
 
 FlexGrid is a Component that modified the Template of the default DataGrid.
@@ -117,7 +119,7 @@ This is Example Code how to use Frozen Bands.
 <c:FlexGrid>
   <!-- Here is start of code to add frozen bands. -->
   <c:FlexGrid.FrozenBands>
-  
+
     <c:TextBand
       Width="100"
       HorizontalAlignment="Center"
@@ -147,6 +149,8 @@ This is Example Code how to use Frozen Bands.
 <br>
 
 ## Mergable Column Header (Band.Bands)
+
+FlexGrid can represent Merged Column Headers.
 
 - (Writing Content...)
 
