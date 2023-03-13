@@ -245,6 +245,10 @@ Related CodeProject Articles:
 * [Dynamic Columns in a WPF DataGrid Control](https://www.codeproject.com/Articles/891995/Dynamic-Columns-in-a-WPF-DataGrid-Control-Part-2)<br>
 This is Example Code how to use VirtualBands.
 
+<br>
+
+This is Example Code how to use VirtualBand Object.
+
 ```xml
 <!-- xmlns:c="clr-namespace:KevinComponent;assembly=KevinComponent" -->
 
@@ -307,6 +311,8 @@ The **`VirtualBandBinding`** is the class to binding property to generated bands
 
 Refer to the code below.  
 https://github.com/soomin-kevin-sung/dotnet-flexgrid/blob/c4e05c1f2c0517c263fdca6026c2e74f2cda1fe9/src/KevinComponent/Band.cs#L469-L496
+
+<br>
 
 ## Samples
 
