@@ -243,11 +243,10 @@ Related StackOverflow questions:
 
 Related CodeProject Articles:  
 * [Dynamic Columns in a WPF DataGrid Control](https://www.codeproject.com/Articles/891995/Dynamic-Columns-in-a-WPF-DataGrid-Control-Part-2)<br>
-This is Example Code how to use VirtualBands.
 
 <br>
 
-This is Example Code how to use VirtualBand Object.
+This is Example Code how to use VirtualBands.
 
 ```xml
 <!-- xmlns:c="clr-namespace:KevinComponent;assembly=KevinComponent" -->
