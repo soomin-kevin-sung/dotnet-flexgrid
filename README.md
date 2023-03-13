@@ -158,6 +158,12 @@ The Bands Property in Band can be used to represent Merged Column Headers.
   &lt;Merged Column Headers&gt;
 </p>
 
+Related Stack-overflow questions:  
+* [Multilevel-column-header-for-datagrid-in-wpf](https://stackoverflow.com/questions/17652039/multilevel-column-header-for-datagrid-in-wpf)<br>
+* [Wpf-datagrid-header-above-header](https://stackoverflow.com/questions/51440426/wpf-datagrid-header-above-header)<br>
+* [Merge-header-columns-datagrid-wpf](https://stackoverflow.com/questions/6446684/merge-header-columns-datagrid-wpf)
+<br><br>
+
 This is Example Code how to use Band.Bands Object.
 
 ```xml
