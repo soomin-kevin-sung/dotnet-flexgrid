@@ -150,7 +150,7 @@ This is Example Code how to use Frozen Bands.
 
 ## Mergable Column Header (Band.Bands)
 
-The Bands Property in Band can be used to represent Merged Column Headers.
+The **`Bands`** Property in Band can be used to represent Merged Column Headers.
 
 <p align="center">
   <img src="./resources/images/FlexGridMergedHeader.png" alt="FlexGridMergedHeader.png" />
@@ -158,10 +158,10 @@ The Bands Property in Band can be used to represent Merged Column Headers.
   &lt;Merged Column Headers&gt;
 </p>
 
-Related Stack-overflow questions:  
-* [Multilevel-column-header-for-datagrid-in-wpf](https://stackoverflow.com/questions/17652039/multilevel-column-header-for-datagrid-in-wpf)<br>
-* [Wpf-datagrid-header-above-header](https://stackoverflow.com/questions/51440426/wpf-datagrid-header-above-header)<br>
-* [Merge-header-columns-datagrid-wpf](https://stackoverflow.com/questions/6446684/merge-header-columns-datagrid-wpf)
+Related StackOverflow questions:  
+* [Multilevel column header for datagrid in wpf](https://stackoverflow.com/questions/17652039/multilevel-column-header-for-datagrid-in-wpf)<br>
+* [Wpf datagrid header above header](https://stackoverflow.com/questions/51440426/wpf-datagrid-header-above-header)<br>
+* [Merge header columns datagrid wpf](https://stackoverflow.com/questions/6446684/merge-header-columns-datagrid-wpf)
 <br><br>
 
 This is Example Code how to use Band.Bands Object.
@@ -225,11 +225,88 @@ This is Example Code how to use Band.Bands Object.
 
 <br>
 
-## Variable Columns (VirtualBand)
+## Variable Columns (VirtualBand & VirtualBandBinding)
 
-- (Writing Content...)
+FlexGrid can represent varaible columns by **`VirtualBand`** class.
+<br>
+
+List of All kind of **`VirtualBand`**.
+- **`VirtualTextBand`**
+- **`VirtualCheckBoxBand`**
+- **`VirtualComboBoxBand`**
+- **`VirtualTemplateBand`**
+<br>
+
+Related StackOverflow questions:  
+* [How do i bind a wpf datagrid to a variable number of columns](https://stackoverflow.com/questions/320089/how-do-i-bind-a-wpf-datagrid-to-a-variable-number-of-columns)<br>
+* [How do i dynamically generate columns in a wpf datagrid](https://stackoverflow.com/questions/1983033/how-do-i-dynamically-generate-columns-in-a-wpf-datagrid)<br>
+
+Related CodeProject Articles:  
+* [Dynamic Columns in a WPF DataGrid Control](https://www.codeproject.com/Articles/891995/Dynamic-Columns-in-a-WPF-DataGrid-Control-Part-2)<br>
+This is Example Code how to use VirtualBands.
+
+```xml
+<!-- xmlns:c="clr-namespace:KevinComponent;assembly=KevinComponent" -->
+
+<c:FlexGrid>
+  <c:FlexGrid.FrozenBands>
+    <c:TextBand
+      Width="100"
+      HorizontalAlignment="Center"
+      Header="Name"
+      TextBinding="{Binding Name}" />
+
+    <c:TextBand
+      Width="150"
+      HorizontalAlignment="Center"
+      Header="BirthDate"
+      TextBinding="{Binding BirthDate}" />
+
+    <c:TextBand
+      Width="150"
+      Header="Address"
+      TextBinding="{Binding Address}" />
+  </c:FlexGrid.FrozenBands>
+
+  <c:FlexGrid.Bands>
+    <c:TextBand Header="Subject Scores">
+      <c:TextBand.Bands>
+        <c:VirtualTemplateBand
+          x:Name="vbandSubjects"
+          Width="100"
+          HeaderBinding="{Binding Name}">
+          <c:VirtualTemplateBand.CellTemplate>
+            <DataTemplate>
+              <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <TextBlock Text="{c:VirtualBandBinding Grade}" />
+                <TextBlock Text="(" />
+                <TextBlock Text="{c:VirtualBandBinding Value}" />
+                <TextBlock Text=")" />
+              </StackPanel>
+            </DataTemplate>
+          </c:VirtualTemplateBand.CellTemplate>
+
+          <c:VirtualTemplateBand.CellEditingTemplate>
+            <DataTemplate>
+              <TextBox
+                VerticalContentAlignment="Center"
+                Text="{c:VirtualBandBinding Value}"
+                TextAlignment="Center" />
+            </DataTemplate>
+          </c:VirtualTemplateBand.CellEditingTemplate>
+        </c:VirtualTemplateBand>
+      </c:TextBand.Bands>
+    </c:TextBand>
+  </c:FlexGrid.Bands>
+</c:FlexGrid>
+```
 
 <br>
+
+The **`VirtualBandBinding`** is the class to binding property to generated bands by **`VirtualBand`**. FlexGrid converts the Items in the VirtualBand to Columns, while mapping the VirtualBandBinding to each property appropriately so that the data appears in the Cell.
+
+Refer to the code below.  
+https://github.com/soomin-kevin-sung/dotnet-flexgrid/blob/c4e05c1f2c0517c263fdca6026c2e74f2cda1fe9/src/KevinComponent/Band.cs#L469-L496
 
 ## Samples
 
@@ -241,8 +318,8 @@ This is Example Code how to use Band.Bands Object.
   &lt;BasicSample ScreenShot&gt;
 </p>
 
-- **BasicSample** shows the basic usage of FlexGrid.<br>
-- You can know how to use **FlexGrid** the basically in this sample.
+- **`BasicSample`** shows the basic usage of FlexGrid.<br>
+- You can know how to use **`FlexGrid`** the basically in this sample.
 
 <br>
 
@@ -255,7 +332,7 @@ This is Example Code how to use Band.Bands Object.
 </p>
 
 - FrozenHedaerSample shows how to using the frozen columns.<br>
-- You can use **FlexGrid.FrozenBands** to add frozen columns.
+- You can use **`FlexGrid.FrozenBands`** to add frozen columns.
 - In this sample, the Name, BirthDate bands are Frozen Bands.
 
 <br>
@@ -269,7 +346,7 @@ This is Example Code how to use Band.Bands Object.
 </p>
 
 - MergedHedaerSample shows how to merge column headers.<br>
-- You can use **Band.Bands**(ex. TextBand.Bands, CheckBoxBand.Bands, etc.) to merge column headers.
+- You can use **`Band.Bands`**(ex. TextBand.Bands, CheckBoxBand.Bands, etc.) to merge column headers.
 - In this sample, you can see the Name, BirthDate, Address, and WebSite bands merged into the information band.
 
 <br>
@@ -283,7 +360,7 @@ This is Example Code how to use Band.Bands Object.
 </p>
 
 - VirtualBandSample shows how variable columns are implemented in FlexGrid.<br>
-- You can use **VirtualBand**(ex. VirtualTextBand, VirtualComboBoxBand, VirtualCheckBoxBand, etc.) to show variable columns.
+- You can use **`VirtualBand`**(ex. VirtualTextBand, VirtualComboBoxBand, VirtualCheckBoxBand, etc.) to show variable columns.
 - In this Sample, you can see that the list of subject scores synchronizes with the subject list when you edit the subject list.
 
 <p align="center">
