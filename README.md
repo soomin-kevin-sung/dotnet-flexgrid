@@ -27,13 +27,7 @@ I'm proud to say that FlexGrid was fully built by me, and I'm excited to share i
 - [Using Bands Instead Of Columns](#using-bands-instead-of-columns)
 - [Bands and Frozen Bands](#bands-and-frozen-bands)
 - [Mergable Column Header (Band.Bands)](#mergable-column-header-bandbands)
-- [Variable Columns (VirtualBand)](#variable-columns-virtualband)
-
-<br>
-
-## Upcoming Features
-
-- Background Color, BandHeader Color can modified by developers.
+- [Variable Columns (VirtualBand)](#variable-columns-virtualband--virtualbandbinding)
 
 <br>
 
