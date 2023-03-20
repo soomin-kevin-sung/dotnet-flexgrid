@@ -1,0 +1,107 @@
+﻿<Window
+	x:Class="KevinComponent.Demo.App.Views.ColoredBandHeaderSampleView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:c="clr-namespace:KevinComponent;assembly=KevinComponent"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:KevinComponent.Demo.App.Views"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	Title="ColoredBandHeaderSampleView"
+	Width="800"
+	Height="450"
+	mc:Ignorable="d">
+	<Grid>
+		<c:FlexGrid
+			x:Name="flexGrid"
+			Margin="5"
+			ColumnHeaderHeight="50">
+			<c:FlexGrid.Bands>
+				<c:TextBand Header="Information">
+					<!--  Set BandHeader Background by Band.HeaderStyle.  -->
+					<c:TextBand.HeaderStyle>
+						<Style BasedOn="{StaticResource {x:Type c:BandHeader}}" TargetType="{x:Type c:BandHeader}">
+							<Setter Property="Background" Value="Lime" />
+						</Style>
+					</c:TextBand.HeaderStyle>
+
+					<c:TextBand.Bands>
+						<c:TextBand
+							x:Name="nameBand"
+							Width="100"
+							HorizontalAlignment="Center"
+							Header="Name"
+							TextBinding="{Binding Name}">
+							<c:TextBand.HeaderStyle>
+								<Style BasedOn="{StaticResource {x:Type c:BandHeader}}" TargetType="{x:Type c:BandHeader}">
+									<Setter Property="Background" Value="Red" />
+								</Style>
+							</c:TextBand.HeaderStyle>
+						</c:TextBand>
+
+						<c:TextBand
+							Width="150"
+							HorizontalAlignment="Center"
+							Header="BirthDate"
+							TextBinding="{Binding BirthDate}">
+							<c:TextBand.HeaderStyle>
+								<Style BasedOn="{StaticResource {x:Type c:BandHeader}}" TargetType="{x:Type c:BandHeader}">
+									<Setter Property="Background" Value="Yellow" />
+								</Style>
+							</c:TextBand.HeaderStyle>
+						</c:TextBand>
+
+						<!--  You can set cell style (background, foreground, etc.) by Band.CellStyle.  -->
+						<c:TextBand
+							Width="200"
+							Header="Address"
+							TextBinding="{Binding Address}">
+							<c:TextBand.HeaderStyle>
+								<Style BasedOn="{StaticResource {x:Type c:BandHeader}}" TargetType="{x:Type c:BandHeader}">
+									<Setter Property="Background" Value="Green" />
+									<Setter Property="Foreground" Value="White" />
+								</Style>
+							</c:TextBand.HeaderStyle>
+
+							<c:TextBand.CellStyle>
+								<Style TargetType="{x:Type DataGridCell}">
+									<Setter Property="Background" Value="Pink" />
+
+									<Style.Triggers>
+										<Trigger Property="IsSelected" Value="True">
+											<Setter Property="Foreground" Value="Red" />
+										</Trigger>
+									</Style.Triggers>
+								</Style>
+							</c:TextBand.CellStyle>
+						</c:TextBand>
+
+						<c:TemplateBand Width="250" Header="WebSite">
+							<c:TemplateBand.HeaderStyle>
+								<Style BasedOn="{StaticResource {x:Type c:BandHeader}}" TargetType="{x:Type c:BandHeader}">
+									<Setter Property="Background" Value="Purple" />
+									<Setter Property="Foreground" Value="White" />
+								</Style>
+							</c:TemplateBand.HeaderStyle>
+
+							<c:TemplateBand.CellTemplate>
+								<DataTemplate>
+									<TextBlock>
+										<Hyperlink NavigateUri="{Binding WebSite}" RequestNavigate="OnHyperlinkRequestNavigate">
+											<TextBlock Text="{Binding WebSite}" />
+										</Hyperlink>
+									</TextBlock>
+								</DataTemplate>
+							</c:TemplateBand.CellTemplate>
+
+							<c:TemplateBand.CellEditingTemplate>
+								<DataTemplate>
+									<TextBox Text="{Binding WebSite}" />
+								</DataTemplate>
+							</c:TemplateBand.CellEditingTemplate>
+						</c:TemplateBand>
+					</c:TextBand.Bands>
+				</c:TextBand>
+			</c:FlexGrid.Bands>
+		</c:FlexGrid>
+	</Grid>
+</Window>

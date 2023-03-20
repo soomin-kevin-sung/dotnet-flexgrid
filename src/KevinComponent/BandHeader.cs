@@ -25,6 +25,7 @@ namespace KevinComponent
 		internal BandHeader(Band ownerBand)
 		{
 			OwnerBand = ownerBand;
+			Width = ownerBand.Width;
 		}
 
 		#region Constants
