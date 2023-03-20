@@ -369,10 +369,23 @@ https://github.com/soomin-kevin-sung/dotnet-flexgrid/blob/c4e05c1f2c0517c263fdca
 - In this Sample, you can see that the list of subject scores synchronizes with the subject list when you edit the subject list.
 
 <p align="center">
-  <img src="./resources/images/VirtualBandSample_ItemsSource_Image.png" alt="VirtualBandSample.gif" width=720px/>
+  <img src="./resources/images/VirtualBandSample_ItemsSource_Image.png" alt="VirtualBandSample.gif" width=960px/>
   <br>
   &lt;ItemsSource Description&gt;
 </p>
+
+<br>
+
+### Colored BandHeader Sample
+
+<p align="center">
+  <img src="./resources/images/ColoredBandHeaderSample.png" alt="ColoredBandHeaderSample.png" />
+  <br>
+  &lt;ColoredBandHeaderSample ScreenShot&gt;
+</p>
+
+- ColoredBandHeaderSample shows how to set header and cell style.
+- You can use **`Band.HeaderStyle`** and **`Band.CellStyle`** to set header style and cell style.
 
 <br>
 
