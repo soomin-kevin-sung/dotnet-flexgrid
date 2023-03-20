@@ -34,7 +34,7 @@ namespace KevinComponent
 			Bands.CollectionChanged += OnBandsCollectionChanged;
 			Bands.VirtualBandItemsSourceChanged += OnVirtualBandItemsSourceChanged;
 			Bands.VirtualBandItemsSourceCollectionChanged += OnVirtualBandItemsSourceCollectionChanged;
-
+			
 			UpdateDefaultStyle();
 		}
 
@@ -64,6 +64,12 @@ namespace KevinComponent
 				typeof(object),
 				typeof(Band),
 				new FrameworkPropertyMetadata(null, OnHeaderPropertyChanged));
+		public static readonly DependencyProperty HeaderStyleProperty =
+			DependencyProperty.Register(
+				"HeaderStyle",
+				typeof(Style),
+				typeof(Band),
+				new FrameworkPropertyMetadata(null, OnHeaderStylePropertyChanged));
 		public static readonly DependencyProperty HorizontalHeaderAlignmentProperty =
 			DependencyProperty.Register(
 				"HorizontalHeaderAlignment",
@@ -122,24 +128,37 @@ namespace KevinComponent
 		private static void OnHeaderPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 		{
 			var band = d as Band;
-			if (band?.BandHeader != null)
+			if (band == null)
+				return;
+
+			bool useHeaderTemplate = false;
+			var newValue = e.NewValue;
+			if (newValue is DataTemplate dt)
 			{
-				bool useHeaderTemplate = false;
-				var newValue = e.NewValue;
-				if (newValue is DataTemplate dt)
-				{
-					var cp = new ContentPresenter();
+				var cp = new ContentPresenter();
 
-					cp.ContentTemplate = dt;
-					BindingOperations.SetBinding(cp, ContentPresenter.ContentProperty, new Binding());
+				cp.ContentTemplate = dt;
+				BindingOperations.SetBinding(cp, ContentPresenter.ContentProperty, new Binding());
 
-					newValue = cp;
-					useHeaderTemplate = true;
-				}
-
-				band.BandHeader.Content = newValue;
-				band._useHeaderTemplate = useHeaderTemplate;
+				newValue = cp;
+				useHeaderTemplate = true;
 			}
+
+			band.BandHeader.Content = newValue;
+			band._useHeaderTemplate = useHeaderTemplate;
+		}
+
+		private static void OnHeaderStylePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+		{
+			var band = d as Band;
+			if (band == null)
+				return;
+
+			var newValue = e.NewValue as Style;
+			if (newValue == null)
+				return;
+
+			band.BandHeader.Style = newValue;
 		}
 
 		private static void OnCellTemplatePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -210,10 +229,7 @@ namespace KevinComponent
 			get
 			{
 				if (_bandHeader == null)
-				{
 					_bandHeader = new BandHeader(this);
-					_bandHeader.Width = Width;
-				}
 
 				return _bandHeader;
 			}
@@ -237,6 +253,12 @@ namespace KevinComponent
 		{
 			get => GetValue(HeaderProperty);
 			set => SetValue(HeaderProperty, value);
+		}
+
+		public Style HeaderStyle
+		{
+			get => (Style)GetValue(HeaderStyleProperty);
+			set => SetValue(HeaderStyleProperty, value);
 		}
 
 		public HorizontalAlignment HorizontalHeaderAlignment
