@@ -16,5 +16,21 @@ namespace KevinComponent
 			CellTemplate = virtualBand.CellTemplate;
 			CellEditingTemplate = virtualBand.CellEditingTemplate;
 		}
+
+		#region Protected Override Methods
+
+		protected override void PrepareEdit(ContentPresenter contentPresenter)
+		{
+			base.PrepareEdit(contentPresenter);
+
+			var textBox = Utils.FindVisualChild<TextBox>(contentPresenter);
+			if (textBox != null)
+			{
+				textBox.Focus();
+				textBox.SelectAll();
+			}
+		}
+
+		#endregion
 	}
 }
