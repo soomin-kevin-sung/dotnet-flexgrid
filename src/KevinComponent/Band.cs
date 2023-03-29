@@ -144,6 +144,7 @@ namespace KevinComponent
 				useHeaderTemplate = true;
 			}
 
+			band.SyncDataGridColumn.Header = newValue;
 			band.BandHeader.Content = newValue;
 			band._useHeaderTemplate = useHeaderTemplate;
 		}
@@ -362,6 +363,17 @@ namespace KevinComponent
 			}
 		}
 
+		private void AttachEventHandlers(INotifyPropertyChanged dataContext)
+		{
+			DetachEventHandlers(dataContext);
+			dataContext.PropertyChanged += OnDataContextPropertyChanged;
+		}
+
+		private void DetachEventHandlers(INotifyPropertyChanged dataContext)
+		{
+			dataContext.PropertyChanged -= OnDataContextPropertyChanged;
+		}
+
 		private double LimitWidthForPreventOverflow(ref double totalWidth, double newWidth)
 		{
 			totalWidth -= newWidth;
@@ -502,6 +514,9 @@ namespace KevinComponent
 
 				if (Utils.GetIndexerValue(cell.DataContext, new object[] { DataContext }, out object? bindingSource))
 				{
+					if (cell.DataContext is INotifyPropertyChanged dataContext)
+						AttachEventHandlers(dataContext);
+
 					var newBindingBase = Utils.CloneBinding((BindingBase)bindingBase);
 					SetBindingSource(newBindingBase, bindingSource);
 
@@ -623,6 +638,15 @@ namespace KevinComponent
 				cp.Loaded -= OnCellEditingTemplateLoaded;
 				cp.Unloaded -= OnCellEditingTemplateUnloaded;
 			}
+		}
+
+		private void OnDataContextPropertyChanged(object? sender, PropertyChangedEventArgs e)
+		{
+			var row = OwnerFlexGrid?.ItemContainerGenerator.ContainerFromItem(sender) as DataGridRow;
+			if (row == null)
+				return;
+
+			SyncDataGridColumn?.RefreshCellContent(row);
 		}
 
 		#endregion
