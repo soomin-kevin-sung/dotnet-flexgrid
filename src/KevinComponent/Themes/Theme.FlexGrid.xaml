@@ -199,6 +199,8 @@
 		<Setter Property="Stylus.IsFlicksEnabled" Value="False" />
 		<Setter Property="SnapsToDevicePixels" Value="True" />
 		<Setter Property="RowHeight" Value="26" />
+		<Setter Property="EnableColumnVirtualization" Value="True" />
+		<Setter Property="EnableRowVirtualization" Value="True" />
 
 		<Setter Property="Template">
 			<Setter.Value>
