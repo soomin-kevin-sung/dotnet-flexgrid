@@ -245,13 +245,13 @@ namespace KevinComponent
 			var comboBox = Utils.FindVisualChild<ComboBox>(contentPresenter);
 			if (comboBox != null)
 			{
+				SetComboBoxDataTemplate(comboBox);
 				SetComboBoxItemsSource(comboBox);
 				SetComboBoxSelectedItem(comboBox);
 				SetComboBoxIsEditable(comboBox);
 				SetComboBoxIsTextSearchEnabled(comboBox);
 				SetComboBoxIsTextSearchCaseSensitive(comboBox);
 				SetComboBoxMaxDropDownHeight(comboBox);
-				SetComboBoxDataTemplate(comboBox);
 
 				comboBox.Width = double.NaN;
 				comboBox.Height = double.NaN;

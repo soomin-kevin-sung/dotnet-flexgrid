@@ -512,11 +512,11 @@ namespace KevinComponent
 				if (cell == null)
 					continue;
 
-				if (cell.DataContext is INotifyPropertyChanged dataContext)
-					AttachEventHandlers(dataContext);
-
 				if (Utils.GetIndexerValue(cell.DataContext, new object[] { DataContext }, out object? bindingSource))
 				{
+					if (cell.DataContext is INotifyPropertyChanged dataContext)
+						AttachEventHandlers(dataContext);
+
 					var newBindingBase = Utils.CloneBinding((BindingBase)bindingBase);
 					SetBindingSource(newBindingBase, bindingSource);
 
