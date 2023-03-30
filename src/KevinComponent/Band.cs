@@ -642,6 +642,16 @@ namespace KevinComponent
 
 		private void OnDataContextPropertyChanged(object? sender, PropertyChangedEventArgs e)
 		{
+			switch (e.PropertyName)
+			{
+				case "Item[]":
+					OnDataContextIndexerChanged(sender);
+					break;
+			}
+		}
+
+		private void OnDataContextIndexerChanged(object? sender)
+		{
 			var row = OwnerFlexGrid?.ItemContainerGenerator.ContainerFromItem(sender) as DataGridRow;
 			if (row == null)
 				return;
