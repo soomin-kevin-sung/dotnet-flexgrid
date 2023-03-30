@@ -512,11 +512,11 @@ namespace KevinComponent
 				if (cell == null)
 					continue;
 
+				if (cell.DataContext is INotifyPropertyChanged dataContext)
+					AttachEventHandlers(dataContext);
+
 				if (Utils.GetIndexerValue(cell.DataContext, new object[] { DataContext }, out object? bindingSource))
 				{
-					if (cell.DataContext is INotifyPropertyChanged dataContext)
-						AttachEventHandlers(dataContext);
-
 					var newBindingBase = Utils.CloneBinding((BindingBase)bindingBase);
 					SetBindingSource(newBindingBase, bindingSource);
 
@@ -652,8 +652,7 @@ namespace KevinComponent
 
 		private void OnDataContextIndexerChanged(object? sender)
 		{
-			var row = OwnerFlexGrid?.ItemContainerGenerator.ContainerFromItem(sender) as DataGridRow;
-			if (row == null)
+			if (OwnerFlexGrid?.ItemContainerGenerator.ContainerFromItem(sender) is not DataGridRow row)
 				return;
 
 			SyncDataGridColumn?.RefreshCellContent(row);
