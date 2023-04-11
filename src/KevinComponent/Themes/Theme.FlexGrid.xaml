@@ -194,7 +194,6 @@
 		<Setter Property="BorderBrush" Value="{StaticResource FlexGrid.Static.Border}" />
 		<Setter Property="BorderThickness" Value="1" />
 		<Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected" />
-		<Setter Property="ScrollViewer.CanContentScroll" Value="true" />
 		<Setter Property="ScrollViewer.PanningMode" Value="Both" />
 		<Setter Property="Stylus.IsFlicksEnabled" Value="False" />
 		<Setter Property="SnapsToDevicePixels" Value="True" />
