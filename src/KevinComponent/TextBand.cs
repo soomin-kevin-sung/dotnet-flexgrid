@@ -71,14 +71,14 @@ namespace KevinComponent
 
 		#region Private Variables
 
-		BindingBase? _textBinding;
-		BindingBase? _editingTextBinding;
+		BindingBase _textBinding;
+		BindingBase _editingTextBinding;
 
 		#endregion
 
 		#region Public Properties
 
-		public BindingBase? TextBinding
+		public BindingBase TextBinding
 		{
 			get => _textBinding;
 			set
@@ -86,12 +86,12 @@ namespace KevinComponent
 				if (_textBinding != value)
 				{
 					_textBinding = value;
-					OwnerFlexGrid?.RefreshCells(this);
+					OwnerFlexGrid.RefreshCells(this);
 				}
 			}
 		}
 
-		public BindingBase? EditingTextBinding
+		public BindingBase EditingTextBinding
 		{
 			get => _editingTextBinding;
 			set
@@ -135,7 +135,7 @@ namespace KevinComponent
 
 		#region Private Methods
 
-		private BindingBase? GetTextBinding(bool isEditing)
+		private BindingBase GetTextBinding(bool isEditing)
 		{
 			if (isEditing && EditingTextBinding != null)
 				return EditingTextBinding;
@@ -217,7 +217,7 @@ namespace KevinComponent
 				|| e.Property == TextAlignmentProperty
 				|| e.Property == TextVerticalAlignmentProperty
 				|| e.Property == OverrideTextAlignmentProperty)
-				OwnerFlexGrid?.RefreshCells(this);
+				OwnerFlexGrid.RefreshCells(this);
 		}
 
 		protected override void OnCellTemplateLoaded(ContentPresenter contentPresenter)

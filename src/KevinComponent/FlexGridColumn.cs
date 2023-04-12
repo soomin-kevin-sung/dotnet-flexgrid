@@ -45,14 +45,14 @@ namespace KevinComponent
 
 		#region Protected Override Methods
 
-		protected override FrameworkElement? GenerateEditingElement(DataGridCell cell, object dataItem)
+		protected override FrameworkElement GenerateEditingElement(DataGridCell cell, object dataItem)
 		{
-			return OwnerBand?.GenerateElement(cell, true);
+			return OwnerBand.GenerateElement(cell, true);
 		}
 
-		protected override FrameworkElement? GenerateElement(DataGridCell cell, object dataItem)
+		protected override FrameworkElement GenerateElement(DataGridCell cell, object dataItem)
 		{
-			return OwnerBand?.GenerateElement(cell, false);
+			return OwnerBand.GenerateElement(cell, false);
 		}
 
 		protected override void RefreshCellContent(FrameworkElement element, string propertyName)

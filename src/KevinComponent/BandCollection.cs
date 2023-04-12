@@ -24,20 +24,20 @@ namespace KevinComponent
 
 		#region Private Variables
 
-		FlexGrid? _ownerFlexGrid;
+		FlexGrid _ownerFlexGrid;
 
 		#endregion
 
 		#region Public Events
 
-		public event DependencyPropertyChangedEventHandler? VirtualBandItemsSourceChanged;
-		public event NotifyCollectionChangedEventHandler? VirtualBandItemsSourceCollectionChanged;
+		public event DependencyPropertyChangedEventHandler VirtualBandItemsSourceChanged;
+		public event NotifyCollectionChangedEventHandler VirtualBandItemsSourceCollectionChanged;
 
 		#endregion
 
 		#region Internal Properties
 
-		internal FlexGrid? OwnerFlexGrid
+		internal FlexGrid OwnerFlexGrid
 		{
 			get => _ownerFlexGrid;
 			set
@@ -56,7 +56,7 @@ namespace KevinComponent
 
 		#region Public Properties
 
-		public Band? ParentBand { get; }
+		public Band ParentBand { get; }
 
 		public int MaxDepth
 		{
@@ -151,12 +151,12 @@ namespace KevinComponent
 
 		#region Private EventHandlers
 
-		private void OnVirtualBandItemsSourceChanged(object? sender, DependencyPropertyChangedEventArgs e)
+		private void OnVirtualBandItemsSourceChanged(object sender, DependencyPropertyChangedEventArgs e)
 		{
 			VirtualBandItemsSourceChanged?.Invoke(sender, e);
 		}
 
-		private void OnVirtualBandItemsSourceCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+		private void OnVirtualBandItemsSourceCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
 		{
 			VirtualBandItemsSourceCollectionChanged?.Invoke(sender, e);
 		}

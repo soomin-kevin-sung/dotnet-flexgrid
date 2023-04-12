@@ -49,16 +49,16 @@ namespace KevinComponent
 
 		#region Private Variables
 
-		Grid? _frozenBandsWrapper;
-		ScrollViewer? _bandsScrollViewer;
-		Grid? _bandsWrapper;
-		FlexGrid? _ownerFlexGrid;
+		Grid _frozenBandsWrapper;
+		ScrollViewer _bandsScrollViewer;
+		Grid _bandsWrapper;
+		FlexGrid _ownerFlexGrid;
 
 		#endregion
 
 		#region Public Properties
 
-		public FlexGrid? OwnerFlexGrid
+		public FlexGrid OwnerFlexGrid
 		{
 			get
 			{

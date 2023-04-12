@@ -60,13 +60,13 @@ namespace KevinComponent
 
 		#region Private Variables
 
-		BindingBase? _selectedItemBinding;
+		BindingBase _selectedItemBinding;
 
 		#endregion
 
 		#region Public Properties
 
-		public BindingBase? SelectedItemBinding
+		public BindingBase SelectedItemBinding
 		{
 			get => _selectedItemBinding;
 			set
@@ -119,7 +119,7 @@ namespace KevinComponent
 
 		#region Private Methods
 		
-		private void SetSelectedItemBinding(BindingBase? newValue)
+		private void SetSelectedItemBinding(BindingBase newValue)
 		{
 			foreach (var band in VirtualizedBands)
 			{

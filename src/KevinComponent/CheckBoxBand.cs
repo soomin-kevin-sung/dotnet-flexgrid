@@ -58,13 +58,13 @@ namespace KevinComponent
 
 		#region Private Variables
 
-		BindingBase? _checkBinding;
+		BindingBase _checkBinding;
 
 		#endregion
 
 		#region Public Properties
 
-		public BindingBase? CheckBinding
+		public BindingBase CheckBinding
 		{
 			get => _checkBinding;
 			set
@@ -72,7 +72,7 @@ namespace KevinComponent
 				if (_checkBinding != value)
 				{
 					_checkBinding = value;
-					OwnerFlexGrid?.RefreshCells(this);
+					OwnerFlexGrid.RefreshCells(this);
 				}
 			}
 		}
@@ -163,9 +163,9 @@ namespace KevinComponent
 			base.OnPropertyChanged(e);
 
 			if (e.Property == IsThreeStateProperty)
-				OwnerFlexGrid?.RefreshCells(this);
+				OwnerFlexGrid.RefreshCells(this);
 			else if (e.Property == ContentProperty)
-				OwnerFlexGrid?.RefreshCells(this);
+				OwnerFlexGrid.RefreshCells(this);
 		}
 
 		#endregion

@@ -37,14 +37,14 @@ namespace KevinComponent
 
 		#region Private Variables
 
-		BindingBase? _checkBinding;
-		BindingBase? _contentBinding;
+		BindingBase _checkBinding;
+		BindingBase _contentBinding;
 
 		#endregion
 
 		#region Public Properties
 
-		public BindingBase? CheckBinding
+		public BindingBase CheckBinding
 		{
 			get => _checkBinding;
 			set
@@ -69,7 +69,7 @@ namespace KevinComponent
 			set => SetValue(ContentProperty, value);
 		}
 
-		public BindingBase? ContentBinding
+		public BindingBase ContentBinding
 		{
 			get => _contentBinding;
 			set
@@ -92,7 +92,7 @@ namespace KevinComponent
 
 		#region Private Methods
 
-		private void SetCheckBinding(BindingBase? newValue)
+		private void SetCheckBinding(BindingBase newValue)
 		{
 			foreach (var band in VirtualizedBands)
 			{
@@ -122,7 +122,7 @@ namespace KevinComponent
 			}
 		}
 
-		private void SetContentBinding(BindingBase? newValue)
+		private void SetContentBinding(BindingBase newValue)
 		{
 			foreach (var band in VirtualizedBands)
 			{

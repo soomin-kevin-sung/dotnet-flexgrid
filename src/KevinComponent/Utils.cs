@@ -16,7 +16,7 @@ namespace KevinComponent
 {
 	public static class Utils
 	{
-		public static T? FindVisualChild<T>(DependencyObject d) where T : DependencyObject
+		public static T FindVisualChild<T>(DependencyObject d) where T : DependencyObject
 		{
 			int numOfChildren = VisualTreeHelper.GetChildrenCount(d);
 
@@ -39,7 +39,7 @@ namespace KevinComponent
 			return null;
 		}
 
-		public static object? FindVisualChild(DependencyObject d, string name)
+		public static object FindVisualChild(DependencyObject d, string name)
 		{
 			int numOfChildren = VisualTreeHelper.GetChildrenCount(d);
 
@@ -62,7 +62,7 @@ namespace KevinComponent
 			return null;
 		}
 
-		public static T? FindVisualParent<T>(DependencyObject child) where T : DependencyObject
+		public static T FindVisualParent<T>(DependencyObject child) where T : DependencyObject
 		{
 			var parentObject = GetParentObject(child);
 			if (parentObject == null)
@@ -74,7 +74,7 @@ namespace KevinComponent
 				return FindVisualParent<T>(parentObject);
 		}
 
-		private static DependencyObject? GetParentObject(DependencyObject child)
+		private static DependencyObject GetParentObject(DependencyObject child)
 		{
 			if (child == null)
 				return null;
@@ -145,11 +145,11 @@ namespace KevinComponent
 			return result.ToArray();
 		}
 
-		public static bool GetIndexerValue(object target, object[] parameters, out object? result)
+		public static bool GetIndexerValue(object target, object[] parameters, out object result)
 		{
 			result = null;
 
-			var parameterTypes = parameters.Select(t => t?.GetType()).ToArray()!;
+			var parameterTypes = parameters.Select(t => t?.GetType()).ToArray();
 			var indexer = GetIndexProperty(target.GetType(), parameterTypes);
 			if (indexer == null)
 				return false;
@@ -158,7 +158,7 @@ namespace KevinComponent
 			return true;
 		}
 
-		private static PropertyInfo? GetIndexProperty(Type targetType, Type?[] parameterTypes)
+		private static PropertyInfo GetIndexProperty(Type targetType, Type[] parameterTypes)
 		{
 			var properties = from p in targetType.GetProperties()
 							 where p.Name == "Item"

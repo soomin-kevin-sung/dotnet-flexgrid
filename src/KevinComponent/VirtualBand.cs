@@ -50,16 +50,16 @@ namespace KevinComponent
 
 		#region Private Variables
 
-		BindingBase? _headerBinding;
-		Band? _dummyBand;
+		BindingBase _headerBinding;
+		Band _dummyBand;
 		ObservableCollection<Band> _virtualizedBands;
 
 		#endregion
 
 		#region Public Events
 
-		public event DependencyPropertyChangedEventHandler? ItemsSourceChanged;
-		public event NotifyCollectionChangedEventHandler? ItemsSourceCollectionChanged;
+		public event DependencyPropertyChangedEventHandler ItemsSourceChanged;
+		public event NotifyCollectionChangedEventHandler ItemsSourceCollectionChanged;
 
 		#endregion
 
@@ -83,7 +83,7 @@ namespace KevinComponent
 
 		#region Public Properties
 
-		public BindingBase? HeaderBinding
+		public BindingBase HeaderBinding
 		{
 			get => _headerBinding;
 			set
@@ -143,11 +143,11 @@ namespace KevinComponent
 				if (!Utils.IsEqualValue(_virtualizedBands[i].DataContext, items[i]))
 				{
 					_virtualizedBands[i].DataContext = items[i];
-					OwnerFlexGrid?.RefreshCells(_virtualizedBands[i]);
+					OwnerFlexGrid.RefreshCells(_virtualizedBands[i]);
 				}
 			}
 
-			OwnerFlexGrid?.SyncColumnsWithBands();
+			OwnerFlexGrid.SyncColumnsWithBands();
 		}
 
 		private void SyncVirtualizedBandsCount(object[] items)
@@ -162,7 +162,7 @@ namespace KevinComponent
 			}
 		}
 
-		private void SetParentBand(Band? newValue)
+		private void SetParentBand(Band newValue)
 		{
 			foreach (var band in VirtualizedBands)
 				band.ParentBand = newValue;
@@ -179,7 +179,7 @@ namespace KevinComponent
 			}	
 		}
 
-		private void SetHeaderBinding(BindingBase? newValue)
+		private void SetHeaderBinding(BindingBase newValue)
 		{
 			foreach (var band in VirtualizedBands)
 			{
@@ -245,7 +245,7 @@ namespace KevinComponent
 
 		#region Private EventHandlers
 
-		private void OnItemsSourceCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+		private void OnItemsSourceCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
 		{
 			VirtualizeBands();
 			ItemsSourceCollectionChanged?.Invoke(this, e);
@@ -261,14 +261,14 @@ namespace KevinComponent
 
 		#region Protected Override Methods
 
-		protected override void OnParentBandChanged(Band? oldParent, Band? newParent)
+		protected override void OnParentBandChanged(Band oldParent, Band newParent)
 		{
 			base.OnParentBandChanged(oldParent, newParent);
 
 			SetParentBand(newParent);
 		}
 
-		protected override void OnOwnerFlexGridChanged(FlexGrid? oldOwnerFlexGrid, FlexGrid? newOwnerFlexGrid)
+		protected override void OnOwnerFlexGridChanged(FlexGrid oldOwnerFlexGrid, FlexGrid newOwnerFlexGrid)
 		{
 			base.OnOwnerFlexGridChanged(oldOwnerFlexGrid, newOwnerFlexGrid);
 

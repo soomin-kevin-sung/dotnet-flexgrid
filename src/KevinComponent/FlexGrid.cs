@@ -56,7 +56,7 @@ namespace KevinComponent
 
 		#region Internal Properties
 
-		internal BandHeadersPresenter? BandHeadersPresenter { get; private set; }
+		internal BandHeadersPresenter BandHeadersPresenter { get; private set; }
 
 		#endregion
 
@@ -83,14 +83,14 @@ namespace KevinComponent
 			// Remove Columns Not Needed.
 			foreach (var column in Columns.ToArray())
 			{
-				if (column is not FlexGridColumn fgc || !totalBottomBandsHash.Contains(fgc.OwnerBand))
+				if (!(column is FlexGridColumn fgc) || !totalBottomBandsHash.Contains(fgc.OwnerBand))
 					Columns.Remove(column);
 			}
 			
 			// Insert Columns.
 			for (int i = 0; i < totalBottomBands.Count; i++)
 			{
-				var band = totalBottomBands[i]!;
+				var band = totalBottomBands[i];
 				var columnIdx = band.SyncDataGridColumn.DisplayIndex;
 
 				if (columnIdx != i)
@@ -155,7 +155,7 @@ namespace KevinComponent
 			SyncColumnsWithBands();
 		}
 
-		private void OnBandsCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+		private void OnBandsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
 		{
 			if (sender is BandCollection bands)
 				AttachEventHandlers(bands);

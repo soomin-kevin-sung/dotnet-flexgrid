@@ -51,14 +51,14 @@ namespace KevinComponent
 
 		#region Private Variables
 
-		BindingBase? _textBinding;
-		BindingBase? _editingTextBinding;
+		BindingBase _textBinding;
+		BindingBase _editingTextBinding;
 
 		#endregion
 
 		#region Public Properties
 
-		public BindingBase? TextBinding
+		public BindingBase TextBinding
 		{
 			get => _textBinding;
 			set
@@ -71,7 +71,7 @@ namespace KevinComponent
 			}
 		}
 
-		public BindingBase? EditingTextBinding
+		public BindingBase EditingTextBinding
 		{
 			get => _editingTextBinding;
 			set
@@ -118,7 +118,7 @@ namespace KevinComponent
 
 		#region Private Methods
 
-		private void SetTextBinding(BindingBase? newValue)
+		private void SetTextBinding(BindingBase newValue)
 		{
 			foreach (var band in VirtualizedBands)
 			{
@@ -127,7 +127,7 @@ namespace KevinComponent
 			}
 		}
 
-		private void SetEditingTextBinding(BindingBase? newValue)
+		private void SetEditingTextBinding(BindingBase newValue)
 		{
 			foreach (var band in VirtualizedBands)
 			{

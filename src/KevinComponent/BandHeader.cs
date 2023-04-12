@@ -53,7 +53,7 @@ namespace KevinComponent
 
 		#region Private Variables
 
-		BandHeaderGripper? _rightGripper;
+		BandHeaderGripper _rightGripper;
 
 		#endregion
 
@@ -143,7 +143,7 @@ namespace KevinComponent
 		protected override void OnClick()
 		{
 			base.OnClick();
-			OwnerBand?.PerformSort();
+			OwnerBand.PerformSort();
 		}
 
 		protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)

@@ -1,10 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
+    <TargetFrameworks>net48-windows;netcoreapp3.1;net6.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <BaseOutputPath>Build</BaseOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+	<Product Condition=" '$(TargetFramework)' == 'net48-windows'">KevinComponent net48-windows</Product>
+	<Product Condition=" '$(TargetFramework)' == 'netcoreapp3.1'">KevinComponent netCoreApp3.1</Product>
+	<Product Condition=" '$(TargetFramework)' == 'net5.0-windows'">KevinComponent net5.0-windows</Product>
+	<Product Condition=" '$(TargetFramework)' == 'net6.0-windows'">KevinComponent net6.0-windows</Product>
+	<Product Condition=" '$(TargetFramework)' == 'net7.0-windows'">KevinComponent net7.0-windows</Product>
+  </PropertyGroup>
+
+  <PropertyGroup>
+	<Title>FlexGrid is a custom WPF DataGrid with convenient and useful features.</Title>
+	<Authors>KevinSung</Authors>
+	<Description>
+	  FlexGrid is a custom WPF DataGrid with convenient and useful features.
+	  When developing code using WPF, the Microsoft-supported DataGrid has limited functionality, such as nested and merged column headers and variable columns.
+	  However, with FlexGrid, your DataGrid development environment becomes significantly more convenient!
+	</Description>
+	<Copyright>Copyright © 2023 KevinSung</Copyright>
+	<PackageProjectUrl>https://github.com/soomin-kevin-sung/dotnet-flexgrid</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/soomin-kevin-sung/dotnet-flexgrid</RepositoryUrl>
+	<RepositoryType>GitHub</RepositoryType>
+	<PackageTags>DataGrid;FlexGrid;WPF;C#;Control;.Net;.NetCore;Free;OpenSource;Variable;Variable Columns;WPF UI;Grid;Table;Excel</PackageTags>
+	<PackageReleaseNotes>.net48 .netcoreapp supported.</PackageReleaseNotes>
+	<AssemblyVersion>1.0.0.0</AssemblyVersion>
+	<FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
 
 </Project>

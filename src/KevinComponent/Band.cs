@@ -184,20 +184,20 @@ namespace KevinComponent
 
 		#region Private Variables
 
-		BandHeader? _bandHeader;
+		BandHeader _bandHeader;
 		bool _useHeaderTemplate;
-		FlexGrid? _ownerFlexGrid;
+		FlexGrid _ownerFlexGrid;
 		bool _settingWithoutParentBand;
 		bool _settingWithoutSubBands;
-		Band? _parentBand;
+		Band _parentBand;
 
 		#endregion
 
 		#region Internal Properties
 
-		internal VirtualBand? DerivationFrom { get; }
+		internal VirtualBand DerivationFrom { get; }
 
-		internal Band? ParentBand
+		internal Band ParentBand
 		{
 			get => _parentBand;
 			set
@@ -211,7 +211,7 @@ namespace KevinComponent
 			}
 		}
 
-		internal FlexGrid? OwnerFlexGrid
+		internal FlexGrid OwnerFlexGrid
 		{
 			get => _ownerFlexGrid;
 			set
@@ -320,7 +320,7 @@ namespace KevinComponent
 
 		#region Private Methods
 
-		private void SetBandsOwnerFlexGrid(FlexGrid? flexGrid)
+		private void SetBandsOwnerFlexGrid(FlexGrid flexGrid)
 		{
 			Bands.OwnerFlexGrid = flexGrid;
 		}
@@ -479,7 +479,7 @@ namespace KevinComponent
 			ParentBand?.UpdateAllWidths();
 		}
 
-		private void SetBindingSource(BindingBase bindingBase, object? source)
+		private void SetBindingSource(BindingBase bindingBase, object source)
 		{
 			if (bindingBase is Binding newBinding)
 			{
@@ -512,7 +512,7 @@ namespace KevinComponent
 				if (cell == null)
 					continue;
 
-				if (Utils.GetIndexerValue(cell.DataContext, new object[] { DataContext }, out object? bindingSource))
+				if (Utils.GetIndexerValue(cell.DataContext, new object[] { DataContext }, out object bindingSource))
 				{
 					if (cell.DataContext is INotifyPropertyChanged dataContext)
 						AttachEventHandlers(dataContext);
@@ -588,7 +588,7 @@ namespace KevinComponent
 
 		#region Private EventHandlers
 
-		private void OnVirtualBandItemsSourceCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+		private void OnVirtualBandItemsSourceCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
 		{
 			UpdateAllWidths();
 		}
@@ -598,7 +598,7 @@ namespace KevinComponent
 			UpdateAllWidths();
 		}
 
-		private void OnBandsCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+		private void OnBandsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
 		{
 			UpdateAllWidths();
 		}
@@ -640,7 +640,7 @@ namespace KevinComponent
 			}
 		}
 
-		private void OnDataContextPropertyChanged(object? sender, PropertyChangedEventArgs e)
+		private void OnDataContextPropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
 			switch (e.PropertyName)
 			{
@@ -650,9 +650,9 @@ namespace KevinComponent
 			}
 		}
 
-		private void OnDataContextIndexerChanged(object? sender)
+		private void OnDataContextIndexerChanged(object sender)
 		{
-			if (OwnerFlexGrid?.ItemContainerGenerator.ContainerFromItem(sender) is not DataGridRow row)
+			if (!(OwnerFlexGrid.ItemContainerGenerator.ContainerFromItem(sender) is DataGridRow row))
 				return;
 
 			SyncDataGridColumn?.RefreshCellContent(row);
@@ -689,9 +689,9 @@ namespace KevinComponent
 
 		#region Protected Virtual Methods
 
-		protected virtual void OnParentBandChanged(Band? oldParent, Band? newParent) { }
+		protected virtual void OnParentBandChanged(Band oldParent, Band newParent) { }
 
-		protected virtual void OnOwnerFlexGridChanged(FlexGrid? oldOwnerFlexGrid, FlexGrid? newOwnerFlexGrid)
+		protected virtual void OnOwnerFlexGridChanged(FlexGrid oldOwnerFlexGrid, FlexGrid newOwnerFlexGrid)
 		{
 			SetBandsOwnerFlexGrid(newOwnerFlexGrid);
 		}
