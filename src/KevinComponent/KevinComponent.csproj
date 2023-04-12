@@ -3,15 +3,14 @@
   <PropertyGroup>
     <TargetFrameworks>net48-windows;netcoreapp3.1;net6.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
-    <BaseOutputPath>Build</BaseOutputPath>
+	<BaseOutputPath>bin</BaseOutputPath>
+	<BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
   </PropertyGroup>
 
   <PropertyGroup>
-	<Product Condition=" '$(TargetFramework)' == 'net48-windows'">KevinComponent net48-windows</Product>
-	<Product Condition=" '$(TargetFramework)' == 'netcoreapp3.1'">KevinComponent netCoreApp3.1</Product>
-	<Product Condition=" '$(TargetFramework)' == 'net5.0-windows'">KevinComponent net5.0-windows</Product>
-	<Product Condition=" '$(TargetFramework)' == 'net6.0-windows'">KevinComponent net6.0-windows</Product>
-	<Product Condition=" '$(TargetFramework)' == 'net7.0-windows'">KevinComponent net7.0-windows</Product>
+	<Product Condition="'$(TargetFramework)' == 'net48-windows'">KevinComponent net48-windows</Product>
+	<Product Condition="'$(TargetFramework)' == 'netcoreapp3.1'">KevinComponent netCoreApp3.1</Product>
+	<Product Condition="'$(TargetFramework)' == 'net6.0-windows'">KevinComponent net6.0-windows</Product>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -27,7 +26,7 @@
 	<RepositoryUrl>https://github.com/soomin-kevin-sung/dotnet-flexgrid</RepositoryUrl>
 	<RepositoryType>GitHub</RepositoryType>
 	<PackageTags>DataGrid;FlexGrid;WPF;C#;Control;.Net;.NetCore;Free;OpenSource;Variable;Variable Columns;WPF UI;Grid;Table;Excel</PackageTags>
-	<PackageReleaseNotes>.net48 .netcoreapp supported.</PackageReleaseNotes>
+	<PackageReleaseNotes>.net48 .netcoreapp3.1 supported.</PackageReleaseNotes>
 	<AssemblyVersion>1.0.0.0</AssemblyVersion>
 	<FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
