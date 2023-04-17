@@ -10,13 +10,21 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    env:
+      CSPROJ_FILE: src\KevinComponent\KevinComponent.csproj
     
     steps:
     - name: Load Repository Files
       uses: actions/checkout@v3
       
     - name: Install MSBuild
-      uses: microsoft/setup-msbuild@v1.1
+      uses: microsoft/setup-msbuild@v1.3.1
+      
+    - name: Install NuGet
+      uses: NuGet/setup-nuget@v1.2.0
+      
+    - name: Restore NuGet Packages
+      run: nuget restore $CSPROJ_FILE
       
     - name: Build KevinComponent.csproj
-      run: msbuild.exe src\KevinComponent\KevinComponent.csproj /p:platform="Any CPU" /p:configuration="Release"
+      run: msbuild.exe $CSPROJ_FILE /p:platform="Any CPU" /p:configuration="Release"
