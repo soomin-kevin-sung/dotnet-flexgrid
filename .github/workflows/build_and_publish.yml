@@ -1,7 +1,7 @@
 name : Build And Publish to Nuget
 on:
-  push:
-    branches: [ master ]
+#   push:
+#    branches: [ master ]
   workflow_dispatch:
     inputs:
       tags:
@@ -9,17 +9,15 @@ on:
   
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     
     steps:
     - name: Load Repository Files
       uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: |
-          4.8
-          3.1.x
-          6.0.x
-    - run: echo '${{ steps.stepid.outputs.dotnet-version }}'
+      
+    - name: Install MSBuild
+      uses: microsoft/setup-msbuild@v1.1
+      
+    - name: Build KevinComponent.csproj
+      run: msbuild.exe src\KevinComponent\KevinComponent.csproj /p:platform="Any CPU /p:configuration="Release"
     
