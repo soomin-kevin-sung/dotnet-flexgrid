@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <BaseOutputPath>Build</BaseOutputPath>
+    <Configurations>Debug;Release;GitHub Release</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
