@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KevinComponent", "KevinComponent\KevinComponent.csproj", "{C4A37AC1-0ED7-4EEC-9952-50EFECE11CA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KevinComponent.Demo.App", "KevinComponent.Demo.App\KevinComponent.Demo.App.csproj", "{5CE219BF-7551-4903-99C7-60BB7FB43179}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KevinComponent.Demo.App", "KevinComponent.Demo.App\KevinComponent.Demo.App.csproj", "{5CE219BF-7551-4903-99C7-60BB7FB43179}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,7 +20,6 @@ Global
 		{5CE219BF-7551-4903-99C7-60BB7FB43179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5CE219BF-7551-4903-99C7-60BB7FB43179}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CE219BF-7551-4903-99C7-60BB7FB43179}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5CE219BF-7551-4903-99C7-60BB7FB43179}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
