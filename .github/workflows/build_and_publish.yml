@@ -11,8 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      SOLUTION_FILE: src\KevinComponent.sln
-      NUGET_FILE: src\Kevincomponent\bin\GitHub Release\*.nupkg
+      SOLUTION_FILE: src/KevinComponent.sln
+      NUGET_FILE: src/KevinComponent/bin/GitHub Release/*.nupkg
     
     steps:    
     - name: Load Repository Files
