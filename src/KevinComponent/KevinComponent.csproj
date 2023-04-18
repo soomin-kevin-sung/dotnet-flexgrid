@@ -34,6 +34,7 @@ However, with FlexGrid, your DataGrid development environment becomes significan
 	<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	<SignAssembly>False</SignAssembly>
+	<PackageId>FlexGrid</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net48-windows|AnyCPU'">
