@@ -24,5 +24,8 @@ jobs:
     - name: Build Solution
       run: dotnet build $SOLUTION_FILE -c "GitHub Release"
       
-    - name: Publish NuGet
-      run: dotnet nuget push "$NUGET_FILE" --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json --skip-duplicate
+    - name: Publish to nuget.org
+      run: dotnet nuget push "$NUGET_FILE" --api-key ${{secrets.NUGET_API_KEY}} --source "https://api.nuget.org/v3/index.json" --skip-duplicate
+    
+    - name: Publish to GitHub Repository
+      run: dotnet nuget push "$NUGET_FILE" --api-key ${{secrets.ACCESS_TOKEN}} --source "github" --skip-duplicate
