@@ -28,4 +28,6 @@ jobs:
       run: dotnet nuget push "$NUGET_FILE" --api-key ${{secrets.NUGET_API_KEY}} --source "https://api.nuget.org/v3/index.json" --skip-duplicate
     
     - name: Publish to GitHub Repository
-      run: dotnet nuget push "$NUGET_FILE" --api-key ${{secrets.ACCESS_TOKEN}} --source "github" --skip-duplicate
+      run: |
+        dotnet nuget add source --username "soomin-kevin-sung" --password ${{secrets.ACCESS_TOKEN}} --store-password-in-clear-text --name "github" "https://nuget.pkg.github.com/OWNER/index.json"
+        dotnet nuget push "$NUGET_FILE" --api-key ${{secrets.ACCESS_TOKEN}} --source "github" --skip-duplicate
