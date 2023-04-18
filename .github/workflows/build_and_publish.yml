@@ -1,11 +1,11 @@
 name : Build And Publish to Nuget
 on:
-#   push:
-#    branches: [ master ]
-  workflow_dispatch:
-    inputs:
-      tags:
-        description: 'Description'
+  push:
+   branches: [ master ]
+#   workflow_dispatch:
+#     inputs:
+#       tags:
+#         description: 'Description'
   
 jobs:
   build:
