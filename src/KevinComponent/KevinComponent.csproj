@@ -17,10 +17,9 @@
   <PropertyGroup>
 	<Title>FlexGrid is a custom WPF DataGrid with convenient and useful features.</Title>
 	<Authors>KevinSung</Authors>
-	<Description>
-	  FlexGrid is a custom WPF DataGrid with convenient and useful features.
-	  When developing code using WPF, the Microsoft-supported DataGrid has limited functionality, such as nested and merged column headers and variable columns.
-	  However, with FlexGrid, your DataGrid development environment becomes significantly more convenient!
+	<Description>FlexGrid is a custom WPF DataGrid with convenient and useful features.
+When developing code using WPF, the Microsoft-supported DataGrid has limited functionality, such as nested and merged column headers and variable columns.
+However, with FlexGrid, your DataGrid development environment becomes significantly more convenient!
 	</Description>
 	<Copyright>Copyright © 2023 KevinSung</Copyright>
 	<PackageProjectUrl>https://github.com/soomin-kevin-sung/dotnet-flexgrid</PackageProjectUrl>
