@@ -25,4 +25,4 @@ jobs:
       run: dotnet build $SOLUTION_FILE -c "GitHub Release"
       
     - name: Publish NuGet
-      run: dotnet nuget push $NUGET_FILE --api-key ${{secrets.NUGET_API_KEY}} --skip-duplicate
+      run: dotnet nuget push $NUGET_FILE --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json --skip-duplicate
