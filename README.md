@@ -1,13 +1,15 @@
 # FlexGrid
 
-[![CodeFactor](https://www.codefactor.io/repository/github/soomin-kevin-sung/dotnet-flexgrid/badge/master)](https://www.codefactor.io/repository/github/soomin-kevin-sung/dotnet-flexgrid/overview/master)&nbsp;
-[![License](https://img.shields.io/github/license/soomin-kevin-sung/dotnet-flexgrid)](LICENSE.md)&nbsp;
-![C#](https://img.shields.io/badge/.NET-C%23-007396?style=flat)&nbsp;
-![WPF](https://img.shields.io/badge/WPF-DataGrid-FF9900?style=flat)&nbsp;
+[![Build And Publish to Nuget](https://github.com/soomin-kevin-sung/dotnet-flexgrid/actions/workflows/build_and_publish.yml/badge.svg?branch=master)](https://github.com/soomin-kevin-sung/dotnet-flexgrid/actions/workflows/build_and_publish.yml)
 <br>
 ![.NET](https://img.shields.io/badge/.NET-6.0-512BD4?style=flat)&nbsp;
 ![.NET](https://img.shields.io/badge/.NET-Framework%204.8-512BD4?style=flat)&nbsp;
 ![.NET](https://img.shields.io/badge/.NET-CoreApp%203.1-512BD4?style=flat)&nbsp;
+<br>
+[![CodeFactor](https://www.codefactor.io/repository/github/soomin-kevin-sung/dotnet-flexgrid/badge/master)](https://www.codefactor.io/repository/github/soomin-kevin-sung/dotnet-flexgrid/overview/master)&nbsp;
+[![License](https://img.shields.io/github/license/soomin-kevin-sung/dotnet-flexgrid)](LICENSE.md)&nbsp;
+![C#](https://img.shields.io/badge/.NET-C%23-007396?style=flat)&nbsp;
+![WPF](https://img.shields.io/badge/WPF-DataGrid-FF9900?style=flat)&nbsp;
 
 FlexGrid is a custom WPF DataGrid with convenient and useful features. When developing code using WPF, the Microsoft-supported DataGrid has limited functionality, such as nested and merged column headers and variable columns. However, with FlexGrid, your DataGrid development environment becomes significantly more convenient!
 
