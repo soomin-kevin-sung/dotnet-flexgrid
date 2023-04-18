@@ -6,6 +6,7 @@
 	<BaseOutputPath>bin</BaseOutputPath>
 	<BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
 	<Configurations>Debug;Release;GitHub Release</Configurations>
+	<EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
 
   <PropertyGroup>
