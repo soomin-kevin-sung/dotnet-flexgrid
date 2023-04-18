@@ -12,8 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SOLUTION_FILE: src\KevinComponent.sln
+      NUGET_FILE: src\Kevincomponent\bin\GitHub Release\*.nupkg
     
-    steps:
+    steps:    
     - name: Load Repository Files
       uses: actions/checkout@v3
       
@@ -22,3 +23,6 @@ jobs:
         
     - name: Build Solution
       run: dotnet build $SOLUTION_FILE -c "GitHub Release"
+      
+    - name: Publish NuGet
+      run: dotnet nuget push $NUGE_FILE --api-key ${{secrets.NUGET_API_KEY}} --skip-duplicate
