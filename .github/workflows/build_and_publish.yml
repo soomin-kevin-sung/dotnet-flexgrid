@@ -21,4 +21,4 @@ jobs:
       uses: actions/setup-dotnet@v3
         
     - name: Build Solution
-      run: dotnet $SOLUTION_FILE -c "GitHub Release"
+      run: dotnet build $SOLUTION_FILE -c "GitHub Release"
