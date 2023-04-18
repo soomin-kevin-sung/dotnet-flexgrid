@@ -28,7 +28,7 @@ However, with FlexGrid, your DataGrid development environment becomes significan
 	<RepositoryType>GitHub</RepositoryType>
 	<PackageTags>DataGrid;FlexGrid;WPF;C#;Control;.Net;.NetCore;Free;OpenSource;Variable;Variable Columns;WPF UI;Grid;Table;Excel</PackageTags>
 	<PackageReleaseNotes>.net48 .netcoreapp3.1 supported.</PackageReleaseNotes>
-	<AssemblyVersion>1.0.0.0</AssemblyVersion>
+	<AssemblyVersion>1.0.0.1</AssemblyVersion>
 	<FileVersion>$(AssemblyVersion)</FileVersion>
 	<Version>$(AssemblyVersion)</Version>
 	<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
