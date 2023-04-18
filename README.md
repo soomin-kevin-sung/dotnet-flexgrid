@@ -1,6 +1,7 @@
 # FlexGrid
 
 [![Build And Publish to Nuget](https://github.com/soomin-kevin-sung/dotnet-flexgrid/actions/workflows/build_and_publish.yml/badge.svg?branch=master)](https://github.com/soomin-kevin-sung/dotnet-flexgrid/actions/workflows/build_and_publish.yml)
+![Nuget](https://img.shields.io/nuget/v/flexgrid?label=NuGet&logo=NuGet)
 <br>
 ![.NET](https://img.shields.io/badge/.NET-6.0-512BD4?style=flat)&nbsp;
 ![.NET](https://img.shields.io/badge/.NET-Framework%204.8-512BD4?style=flat)&nbsp;
