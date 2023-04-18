@@ -30,12 +30,13 @@ However, with FlexGrid, your DataGrid development environment becomes significan
 	<PackageReleaseNotes>.net48 .netcoreapp3.1 supported.</PackageReleaseNotes>
 	<AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
 	<FileVersion>$(VersionPrefix)</FileVersion>
-	<Version>1.0.1</Version>
+	<Version>1.0.2</Version>
 	<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	<SignAssembly>False</SignAssembly>
 	<PackageId>FlexGrid</PackageId>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net48-windows|AnyCPU'">
@@ -71,6 +72,10 @@ However, with FlexGrid, your DataGrid development environment becomes significan
 
   <ItemGroup>
     <None Include="..\..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
