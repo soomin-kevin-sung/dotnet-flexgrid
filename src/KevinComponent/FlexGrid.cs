@@ -37,6 +37,12 @@ namespace KevinComponent
 				"UnSelectAllByEscapeKey",
 				typeof(bool),
 				typeof(FlexGrid), new FrameworkPropertyMetadata(false));
+		public static readonly DependencyProperty CellEditEndingCommandProperty =
+			DependencyProperty.Register(
+				"CellEditEndingCommand",
+				typeof(ICommand),
+				typeof(FlexGrid),
+				new FrameworkPropertyMetadata(null));
 
 		#endregion
 
@@ -50,6 +56,24 @@ namespace KevinComponent
 		{
 			get => (bool)GetValue(UnSelectAllByEscapeKeyProperty);
 			set => SetValue(UnSelectAllByEscapeKeyProperty, value);
+		}
+
+		public bool IsEditing
+		{
+			get
+			{
+				var row = (DataGridRow)ItemContainerGenerator.ContainerFromItem(CurrentCell.Item);
+				if (row == null)
+					return false;
+
+				return row.IsEditing;
+			}
+		}
+
+		public ICommand CellEditEndingCommand
+		{
+			get => (ICommand)GetValue(CellEditEndingCommandProperty);
+			set => SetValue(CellEditEndingCommandProperty, value);
 		}
 
 		#endregion
@@ -209,6 +233,26 @@ namespace KevinComponent
 		#endregion
 
 		#region Protected Override Methods
+
+		protected override void OnPreviewKeyDown(KeyEventArgs e)
+		{
+			base.OnPreviewKeyDown(e);
+
+			switch (e.Key)
+			{
+				case Key.Enter:
+					{
+						// 편집 중 Enter 클릭 시
+						if (IsEditing)
+						{
+							// 적용하고 Enter 이벤트를 처리했다고 표기
+							CommitEdit(DataGridEditingUnit.Row, true);
+							e.Handled = true;
+						}
+					}
+					break;
+			}
+		}
 
 		protected override void OnKeyDown(KeyEventArgs e)
 		{
