@@ -45,7 +45,7 @@ namespace KevinComponent
 				new FrameworkPropertyMetadata(null));
 		public static readonly DependencyProperty CommittedCommandProperty =
 			DependencyProperty.Register(
-				"CommittedCommandProperty",
+				"CommittedCommand",
 				typeof(ICommand),
 				typeof(FlexGrid),
 				new FrameworkPropertyMetadata(null));
