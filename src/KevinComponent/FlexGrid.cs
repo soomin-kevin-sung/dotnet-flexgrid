@@ -43,9 +43,9 @@ namespace KevinComponent
 				typeof(ICommand),
 				typeof(FlexGrid),
 				new FrameworkPropertyMetadata(null));
-		public static readonly DependencyProperty CommitedCommandProperty =
+		public static readonly DependencyProperty CommittedCommandProperty =
 			DependencyProperty.Register(
-				"CommitedCommandProperty",
+				"CommittedCommandProperty",
 				typeof(ICommand),
 				typeof(FlexGrid),
 				new FrameworkPropertyMetadata(null));
@@ -82,10 +82,10 @@ namespace KevinComponent
 			set => SetValue(CellEditEndingCommandProperty, value);
 		}
 
-		public ICommand CommitedCommand
+		public ICommand CommittedCommand
 		{
-			get => (ICommand)GetValue(CommitedCommandProperty);
-			set => SetValue(CommitedCommandProperty, value);
+			get => (ICommand)GetValue(CommittedCommandProperty);
+			set => SetValue(CommittedCommandProperty, value);
 		}
 
 		#endregion
@@ -249,7 +249,7 @@ namespace KevinComponent
 		protected override void OnExecutedCommitEdit(ExecutedRoutedEventArgs e)
 		{
 			base.OnExecutedCommitEdit(e);
-			CommitedCommand?.Execute(null);
+			CommittedCommand?.Execute(null);
 		}
 
 		protected override void OnPreviewKeyDown(KeyEventArgs e)
