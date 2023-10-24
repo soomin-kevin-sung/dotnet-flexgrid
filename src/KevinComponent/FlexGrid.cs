@@ -37,18 +37,12 @@ namespace KevinComponent
 				"UnSelectAllByEscapeKey",
 				typeof(bool),
 				typeof(FlexGrid), new FrameworkPropertyMetadata(false));
-		public static readonly DependencyProperty CellEditEndingCommandProperty =
-			DependencyProperty.Register(
-				"CellEditEndingCommand",
-				typeof(ICommand),
-				typeof(FlexGrid),
-				new FrameworkPropertyMetadata(null));
-		public static readonly DependencyProperty CommittedCommandProperty =
-			DependencyProperty.Register(
-				"CommittedCommand",
-				typeof(ICommand),
-				typeof(FlexGrid),
-				new FrameworkPropertyMetadata(null));
+
+		#endregion
+
+		#region Public Events
+
+		public event EventHandler<FlexGridCommittedArgs> Committed;
 
 		#endregion
 
@@ -74,18 +68,6 @@ namespace KevinComponent
 
 				return row.IsEditing;
 			}
-		}
-
-		public ICommand CellEditEndingCommand
-		{
-			get => (ICommand)GetValue(CellEditEndingCommandProperty);
-			set => SetValue(CellEditEndingCommandProperty, value);
-		}
-
-		public ICommand CommittedCommand
-		{
-			get => (ICommand)GetValue(CommittedCommandProperty);
-			set => SetValue(CommittedCommandProperty, value);
 		}
 
 		#endregion
@@ -249,7 +231,8 @@ namespace KevinComponent
 		protected override void OnExecutedCommitEdit(ExecutedRoutedEventArgs e)
 		{
 			base.OnExecutedCommitEdit(e);
-			CommittedCommand?.Execute(null);
+			if (CurrentCell != null)
+				Committed?.Invoke(this, new FlexGridCommittedArgs(CurrentCell));
 		}
 
 		protected override void OnPreviewKeyDown(KeyEventArgs e)
