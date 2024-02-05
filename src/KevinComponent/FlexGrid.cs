@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
 
 namespace KevinComponent
 {
@@ -22,6 +22,7 @@ namespace KevinComponent
 		public FlexGrid()
 		{
 			AutoGenerateColumns = false;
+			ExtendHorizontalScrollToFrozenColumns = false;
 			FrozenBands = new BandCollection(this);
 			Bands = new BandCollection(this);
 
@@ -36,7 +37,16 @@ namespace KevinComponent
 			DependencyProperty.Register(
 				"UnSelectAllByEscapeKey",
 				typeof(bool),
-				typeof(FlexGrid), new FrameworkPropertyMetadata(false));
+				typeof(FlexGrid));
+
+		/// <summary>
+		/// 열고정 할 경우, 아래 스크롤에 대한 확장 여부
+		/// </summary>
+		public static readonly DependencyProperty ExtendHorizontalScrollToFrozenColumnsProperty =
+			DependencyProperty.Register(
+				"ExtendHorizontalScrollToFrozenColumns",
+				typeof(bool),
+				typeof(FlexGrid));
 
 		#endregion
 
@@ -70,6 +80,15 @@ namespace KevinComponent
 			}
 		}
 
+		/// <summary>
+		/// 열고정 할 경우, 아래 스크롤에 대한 확장 여부
+		/// </summary>
+		public bool ExtendHorizontalScrollToFrozenColumns
+		{
+			get => (bool)GetValue(ExtendHorizontalScrollToFrozenColumnsProperty);
+			set => SetValue(ExtendHorizontalScrollToFrozenColumnsProperty, value);
+		}
+
 		#endregion
 
 		#region Internal Properties
@@ -101,10 +120,12 @@ namespace KevinComponent
 			// Remove Columns Not Needed.
 			foreach (var column in Columns.ToArray())
 			{
-				if (!(column is FlexGridColumn fgc) || !totalBottomBandsHash.Contains(fgc.OwnerBand))
+				if (!(column is FlexGridColumn fgc) ||
+					!totalBottomBandsHash.Contains(fgc.OwnerBand) ||
+					fgc.OwnerBand.SyncDataGridColumn != fgc)
 					Columns.Remove(column);
 			}
-			
+
 			// Insert Columns.
 			for (int i = 0; i < totalBottomBands.Count; i++)
 			{
@@ -170,13 +191,15 @@ namespace KevinComponent
 		private void OnLoaded(object sender, RoutedEventArgs e)
 		{
 			BandHeadersPresenter = Utils.FindVisualChild<BandHeadersPresenter>(this);
+
+			Columns.Clear();
 			SyncColumnsWithBands();
 		}
 
 		private void OnBandsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
 		{
-			if (sender is BandCollection bands)
-				AttachEventHandlers(bands);
+			var bands = sender as BandCollection;
+			AttachEventHandlers(bands);
 
 			SyncColumnsWithBands();
 		}
@@ -231,7 +254,11 @@ namespace KevinComponent
 		protected override void OnExecutedCommitEdit(ExecutedRoutedEventArgs e)
 		{
 			base.OnExecutedCommitEdit(e);
-			if (CurrentCell != null)
+
+			var propertyInfo = typeof(DataGrid).GetProperty("CurrentCellContainer", BindingFlags.NonPublic | BindingFlags.Instance);
+			if (propertyInfo.GetValue(this) is DataGridCell cell)
+				Committed?.Invoke(this, new FlexGridCommittedArgs(new DataGridCellInfo(cell)));
+			else if (CurrentCell != null)
 				Committed?.Invoke(this, new FlexGridCommittedArgs(CurrentCell));
 		}
 
