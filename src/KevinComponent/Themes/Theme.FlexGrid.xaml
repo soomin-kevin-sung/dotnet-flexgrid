@@ -87,7 +87,8 @@
 									HorizontalAlignment="{Binding OwnerBand.HorizontalHeaderAlignment, RelativeSource={RelativeSource AncestorType={x:Type local:BandHeader}}}"
 									VerticalAlignment="{Binding OwnerBand.VerticalHeaderAlignment, RelativeSource={RelativeSource AncestorType={x:Type local:BandHeader}}}"
 									RecognizesAccessKey="True"
-									SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+									SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+									TextElement.Foreground="{TemplateBinding Foreground}" />
 
 								<local:BandHeaderGripper
 									x:Name="PART_RightHeaderGripper"
@@ -121,22 +122,6 @@
 					</Grid>
 
 					<ControlTemplate.Triggers>
-						<Trigger Property="IsMouseOver" Value="true">
-							<Setter TargetName="wrapper" Property="Background" Value="{StaticResource BandHeader.MouseOver.Background}" />
-							<Setter TargetName="wrapper" Property="BorderBrush" Value="{StaticResource BandHeader.MouseOver.Border}" />
-						</Trigger>
-
-						<Trigger Property="IsPressed" Value="true">
-							<Setter TargetName="wrapper" Property="Background" Value="{StaticResource BandHeader.Pressed.Background}" />
-							<Setter TargetName="wrapper" Property="BorderBrush" Value="{StaticResource BandHeader.Pressed.Border}" />
-						</Trigger>
-
-						<Trigger Property="IsEnabled" Value="false">
-							<Setter TargetName="wrapper" Property="Background" Value="{StaticResource BandHeader.Disabled.Background}" />
-							<Setter TargetName="wrapper" Property="BorderBrush" Value="{StaticResource BandHeader.Disabled.Border}" />
-							<Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource BandHeader.Disabled.Foreground}" />
-						</Trigger>
-
 						<DataTrigger Binding="{Binding SortDirection, RelativeSource={RelativeSource Self}}" Value="Ascending">
 							<Setter TargetName="AscendArrow" Property="Visibility" Value="Visible" />
 							<Setter TargetName="DescendArrow" Property="Visibility" Value="Hidden" />
@@ -155,6 +140,24 @@
 				</ControlTemplate>
 			</Setter.Value>
 		</Setter>
+
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="true">
+				<Setter Property="Background" Value="{StaticResource BandHeader.MouseOver.Background}" />
+				<Setter Property="BorderBrush" Value="{StaticResource BandHeader.MouseOver.Border}" />
+			</Trigger>
+
+			<Trigger Property="IsPressed" Value="true">
+				<Setter Property="Background" Value="{StaticResource BandHeader.Pressed.Background}" />
+				<Setter Property="BorderBrush" Value="{StaticResource BandHeader.Pressed.Border}" />
+			</Trigger>
+
+			<Trigger Property="IsEnabled" Value="false">
+				<Setter Property="Background" Value="{StaticResource BandHeader.Disabled.Background}" />
+				<Setter Property="BorderBrush" Value="{StaticResource BandHeader.Disabled.Border}" />
+				<Setter Property="TextElement.Foreground" Value="{StaticResource BandHeader.Disabled.Foreground}" />
+			</Trigger>
+		</Style.Triggers>
 	</Style>
 
 	<Style TargetType="{x:Type local:BandHeadersPresenter}">
