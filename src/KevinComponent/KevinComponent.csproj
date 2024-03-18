@@ -30,7 +30,7 @@ However, with FlexGrid, your DataGrid development environment becomes significan
 	<PackageReleaseNotes>.net48 .netcoreapp3.1 supported.</PackageReleaseNotes>
 	<AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
 	<FileVersion>$(VersionPrefix)</FileVersion>
-	<Version>1.0.4</Version>
+	<Version>1.0.5</Version>
 	<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>

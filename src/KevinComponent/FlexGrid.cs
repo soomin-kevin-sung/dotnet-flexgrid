@@ -138,6 +138,9 @@ namespace KevinComponent
 						Columns.Insert(i, band.SyncDataGridColumn);
 					else
 						Columns.Move(columnIdx, i);
+
+					if (band.SortDirection != null)
+						PerformSort(band.SyncDataGridColumn);
 				}
 			}
 		}
