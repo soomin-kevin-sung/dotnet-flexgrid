@@ -226,7 +226,7 @@ namespace KevinComponent
 
 		public void PerformSort(DataGridColumn sortColumn)
 		{
-			if (!CanUserSortColumns || !sortColumn.CanUserSort)
+			if (!CanUserSortColumns)
 				return;
 
 			if (CommitEdit())
